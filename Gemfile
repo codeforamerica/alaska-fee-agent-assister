@@ -19,6 +19,7 @@ group :development, :test do
   gem "brakeman", require: false
   gem "bundler-audit", require: false
   gem "byebug", platforms: %i[mri mingw x64_mingw]
+  gem "rails-controller-testing"
   gem "rspec-rails"
 end
 
@@ -32,6 +33,9 @@ group :development do
 end
 
 group :test do
+  gem "capybara"
+  gem "capybara-selenium"
+  gem "chromedriver-helper"
   gem "rspec_junit_formatter"
 end
 
