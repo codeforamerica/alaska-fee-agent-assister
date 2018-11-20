@@ -2,68 +2,92 @@
 #
 # Check https://circleci.com/docs/2.0/language-ruby/ for more details
 #
+
+working_dir_defaults: &working_dir_defaults
+  working_directory: ~/repo
+
+defaults: &defaults
+  <<: *working_dir_defaults
+  docker:
+    - image: circleci/ruby:2.5.3-node-browsers
+
 version: 2
 jobs:
-  build:
-    docker:
-    # specify the version you desire here
-    - image: circleci/ruby:2.5.3-node-browsers
-      environment:
-        PGHOST: 127.0.0.1
-        PGUSER: root
-        RAILS_ENV: test
-        RACK_ENV: test
-    - image: circleci/postgres:10
-      environment:
-        POSTGRES_USER: root
-        POSTGRES_DB: alaska-fee-agent-assister_test
+  install_dependencies:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          - v1-dependencies-
+      - run: bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-    working_directory: ~/repo
+  run_checks:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          - v1-dependencies-
+      - run: bundle --path vendor/bundle
+      - run: bundle exec bundle-audit update && bundle exec bundle-audit check
+      - run: bundle exec brakeman
+      - run: bundle exec rubocop
+
+  run_tests:
+    <<: *working_dir_defaults
+    docker:
+      - image: circleci/ruby:2.5.3-node-browsers
+        environment:
+          PGHOST: 127.0.0.1
+          PGUSER: root
+          RAILS_ENV: test
+          RACK_ENV: test
+      - image: circleci/postgres:9.6.2-alpine
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_DB: circle-test_test
 
     steps:
-    - checkout
-
-    # Download and cache dependencies
-    - restore_cache:
-        keys:
-        - v1-dependencies-{{ checksum "Gemfile.lock" }}
-        # fallback to using the latest cache if no exact match is found
-        - v1-dependencies-
-
-    - run:
-        name: install dependencies
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          - v1-dependencies-
+      - run: bundle --path vendor/bundle
+      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
+      - run: mkdir /tmp/test-results
+      - type: shell
         command: |
-          bundle install --jobs=4 --retry=3 --path vendor/bundle
+          bundle exec rspec --profile 10 \
+                            --require ./spec/support/pre_documentation_formatter.rb \
+                            --format RspecJunitFormatter \
+                            --out /tmp/test-results/rspec.xml \
+                            --format PreDocumentationFormatter \
+                            $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results
 
-    - save_cache:
-        paths:
-        - ./vendor/bundle
-        key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-
-    - run: bundle exec bundle-audit update && bundle exec bundle-audit check
-    - run: bundle exec brakeman
-    - run: bundle exec rubocop
-
-    # Database setup
-    - run: bundle exec rake db:create
-    - run: bundle exec rake db:schema:load
-
-    # run tests!
-    - run:
-        name: run tests
-        command: |
-          mkdir /tmp/test-results
-          TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
-
-          bundle exec rspec --format progress \
-                          --format RspecJunitFormatter \
-                          --out /tmp/test-results/rspec.xml \
-                          --format progress \
-                          $TEST_FILES
-
-    # collect reports
-    - store_test_results:
-        path: /tmp/test-results
-    - store_artifacts:
-        path: /tmp/test-results
-        destination: test-results
+workflows:
+  version: 2
+  build:
+    jobs:
+      - install_dependencies
+      - run_checks:
+          requires:
+             - install_dependencies
+      - run_tests:
+          requires:
+             - install_dependencies
