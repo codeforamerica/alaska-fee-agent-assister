@@ -1,0 +1,21 @@
+<% content_for :card_title, "What are you helping the client with today?" %>
+
+<% content_for :card_illustration do %>
+  <div class="illustration emoji--big emoji--star">Star</div>
+<% end %>
+
+<% content_for :card_footer do %>
+  <%= form_with url: current_path, method: :put, local: true %>
+    <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+      <%= f.hidden_field(:interview_type, value: "application") %>
+      <button class="button button--primary" type="submit">Submit an application</button>
+    <% end %>
+  </form>
+
+  <%= form_with url: current_path, method: :put, local: true %>
+    <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+      <%= f.hidden_field(:interview_type, value: "renewal") %>
+      <button class="button button--primary" type="submit">Submit a renewal</button>
+    <% end %>
+  </form>
+<% end %>

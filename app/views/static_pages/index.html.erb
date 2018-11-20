@@ -6,7 +6,9 @@
       <div class="grid__item">
         <h1>Give your community the help it deserves.</h1>
         <p class="with-padding-med">A tool for fee agents to help community members apply for or renew their benefits.</p>
-        <a href="#" class="button button--cta with-padding-med">Help someone now</a>
+        <%= link_to screen_path(FormNavigation.first) do %>
+          <button class="button button--cta with-padding-med">Help someone now</button>
+        <% end %>
         <a href="#scroller-target" class="scroller scroller--light"><span class="sr-only">Skip to content</span></a>
       </div>
     </div>
