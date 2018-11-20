@@ -47,7 +47,7 @@ If you do not have this binary, [use this guide to get set up on MacOS].
 
 ### Local Server
 
-* Run the server(s): `foreman start`
+* Run the server(s): `rails s`
 * Visit [your local server](http://localhost:3000)
 * Run tests, Rubocop, bundle audit, and Brakeman: `rake`
 
