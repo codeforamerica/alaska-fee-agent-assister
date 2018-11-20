@@ -5,7 +5,7 @@
     <div class="grid">
       <div class="grid__item">
         <h1>Give your community the help it deserves.</h1>
-        <p class="with-padding-med">As a fee agent, help others apply for services, interview, and submit proof.</p>
+        <p class="with-padding-med">A tool for fee agents to help community members apply for or renew their benefits.</p>
         <a href="#" class="button button--cta with-padding-med">Help someone now</a>
         <a href="#scroller-target" class="scroller scroller--light"><span class="sr-only">Skip to content</span></a>
       </div>
@@ -14,32 +14,32 @@
   <section class="slab slab--white slab--padded" id="scroller-target">
     <div class="grid">
       <div class="grid__item width-one-half shift-one-fourth">
-        <div class="illustration illustration--cfa_alaska_logos"></div>
-        <p>This service was built in partnership with the Alaska Department of Public Assistance by Code for America.</p>
+        <%= image_tag("cfa_alaska_logos.png", alt: "Alaska State seal / Code for America logo") %>
+        <p>This service was built in partnership with the Alaska <strong>Department of Public Assistance by Code for America</strong>.</p>
       </div>
     </div>
   </section>
-  <section class="slab slab--padded">
+
+  <section class="slab slab--white is-desktop-hidden--inline">
+    <%= render "shared/how_it_works" %>
+  </section>
+
+  <section class="slab slab--off-white is-tablet-hidden--inline">
     <div class="grid with-padding-large">
       <div class="grid__item width-one-half shift-one-fourth">
         <h2>How it works.</h2>
       </div>
     </div>
+
     <div class="grid">
-      <div class="grid__item width-one-third with-padding-large">
-        <div class="illustration illustration--interview"></div>
-        <h4>Conduct an interview.</h4>
-        <p class="text--small">We'll guide you through step by step and automatically fill out an digital FA1 form.</p>
+      <div class="grid__item text--small width-one-third center">
+        <%= render "shared/how_it_works_step1" %>
       </div>
-      <div class="grid__item width-one-third with-padding-large">
-        <div class="illustration illustration--proof"></div>
-        <h4>Attach the GEN 50C form and verification docs.</h4>
-        <p class="text--small">We'll help snap photos or upload the application and any relevant proof. The documents will not be saved on your device.</p>
+      <div class="grid__item text--small width-one-third center">
+        <%= render "shared/how_it_works_step2" %>
       </div>
-      <div class="grid__item width-one-third with-padding-large">
-        <div class="illustration illustration--send"></div>
-        <h4>Hit send!</h4>
-        <p class="text--small">The GEN 50C application, FA1 form, and attached verifications will be securely sent to the DPA office within seconds.</p>
+      <div class="grid__item text--small width-one-third center">
+        <%= render "shared/how_it_works_step3" %>
       </div>
     </div>
   </section>
