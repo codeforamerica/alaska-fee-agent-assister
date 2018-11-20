@@ -9,6 +9,7 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "cfa-styleguide", git: "https://github.com/codeforamerica/cfa-styleguide-gem"
 gem "coffee-rails", "~> 4.2"
 gem "jbuilder", "~> 2.5"
+gem "pdf-forms"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 3.11"
 gem "sass-rails", "~> 5.0"
