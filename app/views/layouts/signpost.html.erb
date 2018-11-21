@@ -19,7 +19,11 @@
       </div>
 
       <div class="form-card__footer">
-        <%= yield :card_footer %>
+        <% if content_for? :card_footer %>
+          <%= yield :card_footer %>
+        <% else %>
+          <%= render "shared/next_step_link", button_label: content_for(:card_footer_button_label) || 'Continue' %>
+        <% end %>
       </div>
     </main>
   </div>

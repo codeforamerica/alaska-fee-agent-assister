@@ -1,6 +1,7 @@
 class FormNavigation
   MAIN = [
     InterviewTypeController,
+    ImportantDetailsController,
   ].freeze
 
   class << self
