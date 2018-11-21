@@ -1,0 +1,23 @@
+<% content_for :content do %>
+  <div class="slab">
+    <main id="main" class="card">
+      <header class="card__header">
+        <h1 class="card__title">
+          All of the screens! <div class="emoji emoji--small emoji--party-popper"></div>
+        </h1>
+      </header>
+
+      <div class="card__content">
+        <div class="slab">
+          <% FormNavigation.form_controllers.each do |form| %>
+            <div>
+              <%= link_to form.to_param.titleize,
+                screen_path(form.to_param),
+                class: 'button button--small button--full-mobile' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </main>
+  </div>
+<% end %>
