@@ -1,0 +1,9 @@
+<% content_for :card_title, "First, tell us about you, the fee agent." %>
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <%= f.cfa_input_field :fee_agent_name, "What is the fee agent's name?" %>
+    <%= f.cfa_input_field :fee_agent_email, "What is the fee agent's email address?", options: { type: "email" } %>
+    <%= f.cfa_input_field :fee_agent_phone_number, "What is the fee agent's phone number?", classes: ["form-width--phone"], options: { type: "tel" } %>
+  <% end %>
+<% end %>

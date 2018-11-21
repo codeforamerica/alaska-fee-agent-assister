@@ -3,6 +3,7 @@ class FormNavigation
     InterviewTypeController,
     HowItWorksController,
     LetsStartController,
+    FeeAgentDetailsController,
     ImportantDetailsController,
   ].freeze
 
