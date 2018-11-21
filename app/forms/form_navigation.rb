@@ -2,6 +2,7 @@ class FormNavigation
   MAIN = [
     InterviewTypeController,
     HowItWorksController,
+    LetsStartController,
     ImportantDetailsController,
   ].freeze
 
