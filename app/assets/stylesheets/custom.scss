@@ -1,5 +1,5 @@
 .template--homepage .slab--hero:before {
-  background-image: url(/assets/mel_daniella.jpg);
+  background-image: image-url('mel_daniella.jpg');
 }
 
 .template--homepage {
@@ -12,13 +12,13 @@
 }
 
 .illustration--proof {
-  background-image: url(/assets/proof.png);
+  background-image: image-url('proof.png');
   width: 40px;
   height: 80px;
 }
 
 .illustration--send {
-  background-image: url(/assets/send.png);
+  background-image: image-url('send.png');
   width: 40px;
   height: 80px;
 }
