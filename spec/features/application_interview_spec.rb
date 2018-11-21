@@ -9,6 +9,9 @@ RSpec.feature "Interview for new application", :js do
     expect(page).to have_content "What are you helping the client with today?"
     click_on "Submit an application"
 
+    expect(page).to have_content "How it works"
+    click_on "Let's get started"
+
     expect(page).to have_content "Let's review some of the important details"
     click_on "Continue"
   end
