@@ -1,0 +1,9 @@
+<% content_for :card_title, "Tell us about the #{applicant_or_client}." %>
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <%= f.cfa_input_field :client_name, "What is the #{applicant_or_client}'s name?" %>
+    <%= f.cfa_input_field :client_last_four_ssn, "What are the last four digits of the #{applicant_or_client}'s SSN?", classes: ["form-width--ssn"], options: { type: "tel" } %>
+    <%= f.cfa_textarea :attendee_names, "List the name(s) of the person(s) who attended the interview.", options: {rows: "4"} %>
+  <% end %>
+<% end %>

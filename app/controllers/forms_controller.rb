@@ -1,7 +1,7 @@
 class FormsController < ApplicationController
   before_action :ensure_interview, only: %i[edit update]
 
-  helper_method :current_interview, :current_path, :next_path
+  helper_method :current_interview, :current_path, :next_path, :applicant_or_client
 
   def index
     render layout: "application"
@@ -54,6 +54,14 @@ class FormsController < ApplicationController
   end
 
   # Don't override in subclasses
+
+  def applicant_or_client
+    if current_interview.navigator.interview_type_renewal?
+      "client"
+    else
+      "applicant"
+    end
+  end
 
   def ensure_interview
     if current_interview.blank?

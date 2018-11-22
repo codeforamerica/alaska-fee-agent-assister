@@ -4,6 +4,7 @@ class FormNavigation
     HowItWorksController,
     LetsStartController,
     FeeAgentDetailsController,
+    ClientDetailsController,
     ImportantDetailsController,
   ].freeze
 
