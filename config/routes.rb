@@ -4,6 +4,12 @@ Rails.application.routes.draw do
 
   root "static_pages#index"
 
+  namespace :admin do
+    resources :interviews
+
+    root to: "interviews#index"
+  end
+
   resources :screens, controller: :forms, only: %i[show index] do
     collection do
       FormNavigation.form_controllers.uniq.each do |controller_class|

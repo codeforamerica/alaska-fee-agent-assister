@@ -5,6 +5,8 @@ ruby "2.5.3"
 
 gem "rails", "~> 5.2.1"
 
+gem "administrate"
+gem "administrate-field-enum"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "cfa-styleguide", git: "https://github.com/codeforamerica/cfa-styleguide-gem"
 gem "coffee-rails", "~> 4.2"
