@@ -16,9 +16,15 @@ RSpec.feature "Interview for new application", :js do
     click_on "Continue"
 
     expect(page).to have_content "First, tell us about you, the fee agent"
-    fill_in "What is the fee agent's name", with: "Anne Doe"
+    fill_in "What is the fee agent's name", with: "Anne M. FeeAgent"
     fill_in "What is the fee agent's email address", with: "feeagent@example.com"
     fill_in "What is the fee agent's phone number", with: "555-555-5555"
+    click_on "Continue"
+
+    expect(page).to have_content "Tell us about the applicant"
+    fill_in "What is the applicant's name?", with: "Jane McClient"
+    fill_in "What are the last four digits of the applicant's SSN?", with: "1111"
+    fill_in "List the name(s) of the person(s) who attended the interview.", with: "Jane"
     click_on "Continue"
 
     expect(page).to have_content "Let's review some of the important details"

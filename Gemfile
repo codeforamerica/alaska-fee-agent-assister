@@ -7,6 +7,7 @@ gem "rails", "~> 5.2.1"
 
 gem "administrate"
 gem "administrate-field-enum"
+gem "attr_encrypted"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "cfa-styleguide", git: "https://github.com/codeforamerica/cfa-styleguide-gem"
 gem "jbuilder", "~> 2.5"
