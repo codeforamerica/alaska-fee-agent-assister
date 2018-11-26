@@ -14,6 +14,7 @@ class InterviewDashboard < Administrate::BaseDashboard
     fee_agent_name: Field::String,
     fee_agent_email: Field::String,
     fee_agent_phone_number: Field::String,
+    download_link: DownloadLinkField,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -25,6 +26,7 @@ class InterviewDashboard < Administrate::BaseDashboard
     id
     fee_agent_name
     created_at
+    download_link
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
