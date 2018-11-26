@@ -1,6 +1,8 @@
 require "rails_helper"
 
 RSpec.feature "Admin viewing dashboard" do
+  include PdfHelper
+
   context "logged in admin" do
     def basic_auth!
       encoded_login = ["admin:password"].pack("m*")
@@ -27,6 +29,22 @@ RSpec.feature "Admin viewing dashboard" do
       visit admin_root_path(search: "asdf")
 
       expect(page).to have_content("Interview")
+    end
+
+    scenario "viewing a pdf" do
+      create(:interview,
+             fee_agent_name: "Jessie Tester",
+             client_name: "Jane Doe",
+             attendee_names: "")
+      visit admin_root_path
+
+      click_on "Download"
+
+      temp_file = write_raw_pdf_to_temp_file(source: page.source)
+      pdf_values = filled_in_values(temp_file.path)
+
+      expect(pdf_values["fa_name"]).to include("Jessie Tester")
+      expect(pdf_values["applicant_name"]).to include("Jane Doe")
     end
   end
 end
