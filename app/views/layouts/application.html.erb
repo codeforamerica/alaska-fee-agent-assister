@@ -16,6 +16,9 @@
 
 <body <%= "class=template--homepage" if content_for? :homepage %>>
 <div class="page-wrapper <%= "dark-background" if content_for? :success %>">
+  <div class="demo-banner">
+    This site is for example purposes only.
+  </div>
   <%= render 'shared/header' unless content_for? :homepage %>
   <%= content_for(:content) ? content_for(:content) : yield %>
 </div>
