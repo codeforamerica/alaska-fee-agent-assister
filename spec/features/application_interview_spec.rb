@@ -27,6 +27,12 @@ RSpec.feature "Interview for new application", :js do
     fill_in "List the name(s) of the person(s) who attended the interview.", with: "Jane"
     click_on "Continue"
 
+    expect(page).to have_content "What program(s) is the applicant applying for?"
+
+    check "Food stamps"
+    check "Medicaid"
+    click_on "Continue"
+
     expect(page).to have_content "Let's review some of the important details"
     click_on "Continue"
   end

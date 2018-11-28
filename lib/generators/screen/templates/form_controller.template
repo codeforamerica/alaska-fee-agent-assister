@@ -1,4 +1,5 @@
 class <%= model.camelcase %>Controller < FormsController
+  layout "left_aligned"
   <%- if options.doc? -%>
   # Specify under what conditions controller should be accessible:
   # (By default it will always be shown
