@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_22_004152) do
+ActiveRecord::Schema.define(version: 2018_11_27_222200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 2018_11_22_004152) do
     t.string "encrypted_client_last_four_ssn"
     t.string "encrypted_client_last_four_ssn_iv"
     t.text "attendee_names"
+    t.boolean "selected_snap", default: false
+    t.boolean "selected_medicaid", default: false
+    t.boolean "selected_general_relief", default: false
+    t.boolean "selected_atap", default: false
+    t.boolean "selected_apa", default: false
+    t.boolean "selected_cama", default: false
   end
 
   create_table "navigators", force: :cascade do |t|

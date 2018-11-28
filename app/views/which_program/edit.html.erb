@@ -1,0 +1,19 @@
+<% if current_interview.navigator.interview_type_renewal? %>
+  <% content_for :card_title, "What program(s) is the client renewing?" %>
+<% else %>
+  <% content_for :card_title, "What program(s) is the applicant applying for?" %>
+<% end %>
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+        <%= f.cfa_checkbox_set(:program_type,
+                               [
+                                 { label: "Food stamps", method: :selected_snap },
+                                 { label: "Medicaid", method: :selected_medicaid },
+                                 { label: "General Relief", method: :selected_general_relief },
+                                 { label: "Alaska Temporary Assistance", method: :selected_atap },
+                                 { label: "Adult Public Assistance", method: :selected_apa },
+                                 { label: "CAMA", method: :selected_cama },
+                               ]) %>
+  <% end %>
+<% end %>

@@ -7,6 +7,12 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
       applicant_name: client_name,
       applicant_last_four_ssn: client_last_four_ssn,
       interview_attendees: attendee_names,
+      food_stamps: checkbox_value(selected_snap),
+      medicaid: checkbox_value(selected_medicaid),
+      general_relief: checkbox_value(selected_general_relief),
+      alaska_temporary_assistance: checkbox_value(selected_atap),
+      adult_public_assistance: checkbox_value(selected_apa),
+      cama: checkbox_value(selected_cama),
     }
   end
 
@@ -14,5 +20,11 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
     if super
       "#{super[0..2]}-#{super[3..5]}-#{super[6..9]}"
     end
+  end
+
+  private
+
+  def checkbox_value(boolean)
+    boolean ? "On" : "Off"
   end
 end
