@@ -10,7 +10,7 @@ class WhichProgramForm < Form
 
   def self.existing_attributes(interview)
     attribute_names.reduce({}) do |attributes, program|
-      attributes[program] = interview.public_send(program) ? "1" : "0"
+      attributes[program] = checkbox_value(interview.public_send(program))
       attributes
     end
   end

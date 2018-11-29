@@ -1,0 +1,351 @@
+// Generated 11/29/2018
+[
+    {
+        name: "applicant_name",
+        type: "Text"
+    },
+    {
+        name: "applicant_last_four_ssn",
+        type: "Text"
+    },
+    {
+        name: "fa_name",
+        type: "Text"
+    },
+    {
+        name: "fa_number",
+        type: "Text"
+    },
+    {
+        name: "fa_email",
+        type: "Text"
+    },
+    {
+        name: "interview_date",
+        type: "Text"
+    },
+    {
+        name: "food_stamps",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "medicaid",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "general_relief",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "alaska_temporary_assistance",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "adult_public_assistance",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "cama",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "interview_attendees",
+        type: "Text"
+    },
+    {
+        name: "any_not_listed_names",
+        type: "Text"
+    },
+    {
+        name: "any_away_from_home",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "any_away_from_home_reasons",
+        type: "Text"
+    },
+    {
+        name: "any_drug_felony_name",
+        type: "Text"
+    },
+    {
+        name: "when_alaska_arrival",
+        type: "Text"
+    },
+    {
+        name: "any_drug_felony",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "mandatory_drug_treatment",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "action_towards_rehabilitation",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "re_entry_compliance",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "stay_in_alaska",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "tribal_member_name",
+        type: "Text"
+    },
+    {
+        name: "tribal_member",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "served_parole",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "hhm_work_stopped_name_and_reason",
+        type: "Text"
+    },
+    {
+        name: "who_is_filing_and_dependents",
+        type: "Text"
+    },
+    {
+        name: "rent_mortgage",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "space_rent",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "telephone",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "water_sewer",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "electricity",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "propane_gas",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "oil",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "wood_coal",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "property_tax",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "home_insurance",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "child_support",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "child_care",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "medical_care_medicine",
+        options: ["Off", "On"],
+        type: "Button"
+    },
+    {
+        name: "explain_expenses_payment",
+        type: "Text"
+    },
+    {
+        name: "cama_medical_need",
+        type: "Text"
+    },
+    {
+        name: "other_information",
+        type: "Text",
+    {
+        name: "signature",
+        type: "Text"
+    },
+    {
+        name: "date",
+        type: "Text"
+    },
+    {
+        name: "fa_name_2",
+        type: "Text"
+    },
+    {
+        name: "any_hhm_work_stopped",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "alaska_quest_card",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "filing_federal_tax_return",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "reported_living_expenses",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "fa_number_2",
+        type: "Text"
+    },
+    {
+        name: "app_review_attached",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "client_sign_and_date",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "fa_sign_and_date",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "client_provide_proof",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "proof_of_all_income",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "all_hhm_ssn_listed",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "hhm_citizenship_proof",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "explained_rights_and_responsibilities",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "provided_rights_and_responsibilities",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "child_support_info_form",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "household_tax_returns",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "pregnancy_proof",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "children_birth_certificates",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "marriage_divorce_child_support",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "child_support_info_form_2",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "direct_deposit",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "eviction_utilities_cut_off",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "prelim_exam_for_interim_assistance",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "auth_for_interim_assistance",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "auth_for_phi",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "direct_deposit_form_2",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    },
+    {
+        name: "any_not_listed",
+        options: ["Off", "no", "yes"],
+        type: "Button"
+    }
+]

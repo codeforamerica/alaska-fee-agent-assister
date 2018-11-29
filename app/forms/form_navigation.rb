@@ -6,6 +6,7 @@ class FormNavigation
     FeeAgentDetailsController,
     ClientDetailsController,
     WhichProgramController,
+    RightsAndResponsibilitiesController,
     ImportantDetailsController,
   ].freeze
 

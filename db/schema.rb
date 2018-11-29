@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_222200) do
+ActiveRecord::Schema.define(version: 2018_11_29_020745) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2018_11_27_222200) do
     t.boolean "selected_atap", default: false
     t.boolean "selected_apa", default: false
     t.boolean "selected_cama", default: false
+    t.boolean "explained_rights", default: false
   end
 
   create_table "navigators", force: :cascade do |t|
