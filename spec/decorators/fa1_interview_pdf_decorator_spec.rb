@@ -18,7 +18,8 @@ describe Fa1InterviewPdfDecorator do
                selected_general_relief: true,
                selected_atap: false,
                selected_apa: false,
-               selected_cama: false),
+               selected_cama: false,
+               explained_rights: true),
       ).attributes
 
       fields = PdfForms::PdftkWrapper.new.get_fields("app/lib/pdfs/FA1.pdf")
@@ -30,6 +31,8 @@ describe Fa1InterviewPdfDecorator do
         alaska_temporary_assistance
         adult_public_assistance
         cama
+        explained_rights_and_responsibilities
+        provided_rights_and_responsibilities
       ]
       checkbox_fields.each do |checkbox_field|
         valid_options = fields.detect { |field| field.name == checkbox_field.to_s }.options
@@ -66,6 +69,15 @@ describe Fa1InterviewPdfDecorator do
       expect(attributes[:alaska_temporary_assistance]).to eq "Off"
       expect(attributes[:adult_public_assistance]).to eq "Off"
       expect(attributes[:cama]).to eq "Off"
+    end
+
+    it "fills in both explained and provided for rights and responsibilities" do
+      interview = create(:interview, explained_rights: true)
+
+      attributes = Fa1InterviewPdfDecorator.new(interview).attributes
+
+      expect(attributes[:explained_rights_and_responsibilities]).to eq("yes")
+      expect(attributes[:provided_rights_and_responsibilities]).to eq("yes")
     end
   end
 end

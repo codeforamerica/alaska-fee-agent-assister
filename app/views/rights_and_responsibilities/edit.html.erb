@@ -1,0 +1,18 @@
+<% content_for :card_title, "Take a moment to go over their rights and responsibilities." %>
+
+<% content_for :card_help, "Make sure the #{applicant_or_client} keeps their copy of their rights and responsibilities." %>
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <div class="show-more">
+      <a href="" class="show-more__button">Show more</a>
+      <div class="show-more__content text--small">
+        <%= render "terms" %>
+      </div>
+    </div>
+
+    <%= f.cfa_checkbox_set(:explained_rights,
+                           [{ label: "Yes", method: :explained_rights }],
+                           label_text: "Did you explain the rights and responsibilities and provide a copy to the #{applicant_or_client}?") %>
+  <% end %>
+<% end %>

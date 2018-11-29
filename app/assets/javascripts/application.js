@@ -12,3 +12,20 @@
 //
 //= require cfa_styleguide_main
 //= require_tree .
+
+var showMore = (function() {
+    return {
+        init: function() {
+            $('.show-more').each(function(index, showmore) {
+                $(showmore).find('.show-more__button').click(function(e) {
+                    e.preventDefault();
+                    $(showmore).addClass('is-open');
+                })
+            });
+        }
+    }
+})();
+
+$(document).ready(function() {
+    showMore.init();
+});

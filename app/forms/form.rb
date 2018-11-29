@@ -44,6 +44,10 @@ class Form
       name.underscore.gsub("_form", "")
     end
 
+    def checkbox_value(value)
+      value ? "1" : "0"
+    end
+
     # Override in subclasses if needed
 
     def existing_attributes(interview)

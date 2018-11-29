@@ -13,6 +13,8 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
       alaska_temporary_assistance: checkbox_value(selected_atap),
       adult_public_assistance: checkbox_value(selected_apa),
       cama: checkbox_value(selected_cama),
+      explained_rights_and_responsibilities: yes_no_value(explained_rights),
+      provided_rights_and_responsibilities: yes_no_value(explained_rights),
     }
   end
 
@@ -23,6 +25,10 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
   end
 
   private
+
+  def yes_no_value(boolean)
+    boolean ? "yes" : "no"
+  end
 
   def checkbox_value(boolean)
     boolean ? "On" : "Off"
