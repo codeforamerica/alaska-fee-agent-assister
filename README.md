@@ -1,7 +1,7 @@
-# Colorado Benefits
+# Alaska Fee Agent Assister
 
-Code repository for Colorado Benefits, an application for reporting life changes that affect public assistance benefits by
-[Code for America](https://www.codeforamerica.org).
+Code repository for Alaska Fee Agent Assister, an application for assisting fee agents in Alaska with the benefits 
+interview process by [Code for America](https://www.codeforamerica.org).
 
 ## Getting Set Up
 
