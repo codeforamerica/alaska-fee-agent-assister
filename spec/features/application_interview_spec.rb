@@ -39,6 +39,10 @@ RSpec.feature "Interview for new application", :js do
     expect(page).to have_content "Is there anyone who is living in the home but is not listed on the application?"
     click_on "Yes"
 
+    expect(page).to have_content "Tell us about the people who live in the home but are not on the application"
+    fill_in "List their name(s) and relationship to the applicant.", with: "Meth, RZA, GZA, Raekwon, ODB, Ghostface."
+    click_on "Continue"
+
     expect(page).to have_content "Let's review some of the important details"
     click_on "Continue"
   end
