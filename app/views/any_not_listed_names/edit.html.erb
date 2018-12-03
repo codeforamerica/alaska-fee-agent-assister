@@ -1,0 +1,7 @@
+<% content_for :card_title, "Tell us about the people who live in the home but are not on the #{application_or_renewal_form}" %>
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <%= f.cfa_textarea :any_not_listed_names, "List their name(s) and relationship to the applicant.", options: {rows: "4"} %>
+  <% end %>
+<% end %>

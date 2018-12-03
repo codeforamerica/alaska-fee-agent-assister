@@ -35,7 +35,8 @@ RSpec.feature "Admin viewing dashboard" do
       create(:interview,
              fee_agent_name: "Jessie Tester",
              client_name: "Jane Doe",
-             attendee_names: "")
+             attendee_names: "",
+             any_not_listed: "no")
       visit admin_root_path
 
       click_on "Download"
@@ -45,6 +46,7 @@ RSpec.feature "Admin viewing dashboard" do
 
       expect(pdf_values["fa_name"]).to include("Jessie Tester")
       expect(pdf_values["applicant_name"]).to include("Jane Doe")
+      expect(pdf_values["any_not_listed"]).to include("no")
     end
   end
 end
