@@ -15,6 +15,7 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
       cama: checkbox_value(selected_cama),
       explained_rights_and_responsibilities: yes_no_value(explained_rights),
       provided_rights_and_responsibilities: yes_no_value(explained_rights),
+      any_not_listed: any_not_listed,
     }
   end
 

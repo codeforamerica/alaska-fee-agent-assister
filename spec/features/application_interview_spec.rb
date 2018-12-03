@@ -36,6 +36,9 @@ RSpec.feature "Interview for new application", :js do
     check "Yes"
     click_on "Continue"
 
+    expect(page).to have_content "Is there anyone who is living in the home but is not listed on the application?"
+    click_on "Yes"
+
     expect(page).to have_content "Let's review some of the important details"
     click_on "Continue"
   end
