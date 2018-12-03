@@ -1,0 +1,31 @@
+<% content_for :content do %>
+  <div class="slab">
+    <main id="main" class="form-card form-card--transition">
+      <%= form_with url: current_path, method: :put, local: true %>
+
+        <header class="form-card__header">
+          <%= yield :card_illustration %>
+          <p class="form-card__title">
+            <%= yield :card_title %>
+          </p>
+
+          <% if content_for? :card_help %>
+            <p class="text--help">
+              <%= yield :card_help %>
+            </p>
+          <% end %>
+        </header>
+
+        <div class="form-card__content">
+          <%= yield :card_body %>
+        </div>
+
+        <div class="form-card__footer">
+          <%= yield :card_footer %>
+        </div>
+      </form>
+    </main>
+  </div>
+<% end %>
+
+<%= render template: 'layouts/application' %>

@@ -7,6 +7,7 @@ class FormNavigation
     ClientDetailsController,
     WhichProgramController,
     RightsAndResponsibilitiesController,
+    AnyNotListedController,
     ImportantDetailsController,
   ].freeze
 

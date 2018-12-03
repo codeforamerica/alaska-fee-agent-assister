@@ -1,0 +1,31 @@
+<% content_for :card_title, "Is there anyone who is living in the home but is<strong> not listed on the #{application_or_renewal_form}?</strong>".html_safe %>
+
+<% content_for :card_help, "The context helps DPA in case there are other people in the home who need to be included." %>
+
+<% content_for :card_body do %>
+  <div class="reveal">
+    <p><a href="#" class="reveal__link">Who needs to be listed?</a></p>
+    <div class="reveal__content text--left">
+      <ul class="list--bulleted">
+        <li><strong>If you live with them:</strong> you must include children under 22, spouses, and parents.</li>
+        <li><strong>Roommates:</strong> Do not include roommates unless you buy and prepare more than half of your meals together.</li>
+        <li><strong>60+/disabled:</strong> People who are 60+/disabled and live with others can choose to apply separately.</li>
+        <li><strong>Immigrants:</strong> Any immigrant can choose to opt-out and will not be asked about their immigration status. They still need to be included on this application.</li>
+        <li><strong>Separation/divorce:</strong> In cases of separation or divorce, only include the other person if they live with you. Include your children if they eat most of their meals with you. Children cannot be on multiple cases at once.</li>
+        <li><strong>Pregnant mothers:</strong> Do not include unborn children on this application.</li>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<% content_for :card_footer do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <%= f.button name: "form[any_not_listed]", value: "yes", class: "button" do %>
+      <i class="button__icon--left icon-check"></i>Yes
+    <% end %>
+
+    <%= f.button name: "form[any_not_listed]", value: "no", class: "button" do %>
+      <i class="button__icon--left icon-close"></i>No
+    <% end %>
+  <% end %>
+<% end %>
