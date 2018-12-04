@@ -43,6 +43,9 @@ RSpec.feature "Interview for new application", :js do
     fill_in "List their name(s) and relationship to the applicant.", with: "Meth, RZA, GZA, Raekwon, ODB, Ghostface."
     click_on "Continue"
 
+    expect(page).to have_content "the application who usually lives in the house but is away from home?"
+    click_on "Yes"
+
     expect(page).to have_content "Let's review some of the important details"
     click_on "Continue"
   end
