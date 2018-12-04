@@ -10,6 +10,7 @@ class FormNavigation
     AnyNotListedController,
     AnyNotListedNamesController,
     AnyAwayFromHomeController,
+    AnyAwayFromHomeNamesController,
     ImportantDetailsController,
   ].freeze
 

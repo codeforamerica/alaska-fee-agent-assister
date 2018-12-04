@@ -23,7 +23,13 @@
   height: 80px;
 }
 
+ul.highlighted {
+  white-space: pre-line;
+}
+
 .highlighted li {
+  display: inline-block;
   background-color: #FEFEC5;
   margin-bottom: 10px;
+  padding: 0 0.7em;
 }

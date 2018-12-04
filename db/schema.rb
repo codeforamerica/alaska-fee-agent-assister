@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_002341) do
+ActiveRecord::Schema.define(version: 2018_12_04_004815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_12_04_002341) do
     t.integer "any_not_listed", default: 0
     t.text "any_not_listed_names"
     t.integer "any_away_from_home", default: 0
+    t.text "any_away_from_home_names"
   end
 
   create_table "navigators", force: :cascade do |t|
