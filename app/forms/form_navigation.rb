@@ -9,6 +9,7 @@ class FormNavigation
     RightsAndResponsibilitiesController,
     AnyNotListedController,
     AnyNotListedNamesController,
+    AnyAwayFromHomeController,
     ImportantDetailsController,
   ].freeze
 
