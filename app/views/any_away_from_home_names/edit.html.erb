@@ -1,0 +1,7 @@
+<% content_for :card_title, "Tell us about the people who live in the house but are away from home." %>
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <%= f.cfa_textarea :any_away_from_home_names, "List their name(s), why they are away, and the expected date to return home.", options: {rows: "4"} %>
+    <% end %>
+<% end %>

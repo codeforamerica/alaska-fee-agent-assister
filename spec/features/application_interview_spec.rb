@@ -46,6 +46,10 @@ RSpec.feature "Interview for new application", :js do
     expect(page).to have_content "the application who usually lives in the house but is away from home?"
     click_on "Yes"
 
+    expect(page).to have_content "Tell us about the people who live in the house but are away from home."
+    fill_in "form[any_away_from_home_names]", with: "Andre 3000 and Big Boi"
+    click_on "Continue"
+
     expect(page).to have_content "Let's review some of the important details"
     click_on "Continue"
   end

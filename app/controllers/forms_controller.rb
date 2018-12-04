@@ -1,7 +1,7 @@
 class FormsController < ApplicationController
   before_action :ensure_interview, only: %i[edit update]
 
-  helper_method :current_interview, :current_path, :next_path, :applicant_or_client, :application_or_renewal_form
+  helper_method :current_interview, :current_path, :next_path, :applicant_or_client, :application_or_renewal
 
   def index
     render layout: "application"
@@ -63,11 +63,11 @@ class FormsController < ApplicationController
     end
   end
 
-  def application_or_renewal_form
+  def application_or_renewal
     if current_interview.navigator.interview_type_application?
       "application"
     else
-      "renewal form"
+      "renewal"
     end
   end
 
