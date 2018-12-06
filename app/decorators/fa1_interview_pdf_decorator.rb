@@ -25,6 +25,8 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
       mandatory_drug_treatment: yes_no_enum(completed_treatment_program),
       action_towards_rehabilitation: yes_no_enum(taken_action_towards_rehabilitation),
       re_entry_compliance: yes_no_enum(complied_with_reentry),
+      when_alaska_arrival: arrival_in_alaska,
+      stay_in_alaska: intend_to_stay,
     }
   end
 

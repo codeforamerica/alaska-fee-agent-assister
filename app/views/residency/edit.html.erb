@@ -1,0 +1,24 @@
+<% content_for :card_title, "Tell us about the #{applicant_or_client}'s residency." %>
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <%= f.cfa_radio_set_with_follow_up :lived_outside_alaska,
+      label_text: "Has the #{applicant_or_client} ever lived outside of Alaska?",
+      collection: [
+        { value: :yes, label: "Yes, they have lived outside of Alaska" },
+        { value: :no, label: "No, they have always lived here." },
+      ],
+      first_follow_up: -> { f.cfa_input_field :arrival_in_alaska,
+                            "When was the #{applicant_or_client}'s most recent arrival in Alaska?" }
+    %>
+
+    <%= f.cfa_radio_set :intend_to_stay,
+      label_text: "Does the #{applicant_or_client} intend to remain a resident and stay in Alaska?",
+      help_text: "Answer 'YES' unless they have definite plans to leave Alaska",
+      collection: [
+        { value: :yes, label: "Yes, they intend to remain in Alaska" },
+        { value: :no, label: "No, they do not intend to remain in Alaska." },
+      ]
+      %>
+  <% end %>
+<% end %>

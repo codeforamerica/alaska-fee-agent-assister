@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2018_12_07_183301) do
     t.integer "completed_treatment_program", default: 0
     t.integer "taken_action_towards_rehabilitation", default: 0
     t.integer "complied_with_reentry", default: 0
+    t.string "arrival_in_alaska"
+    t.integer "intend_to_stay", default: 0
   end
 
   create_table "navigators", force: :cascade do |t|
@@ -49,6 +51,7 @@ ActiveRecord::Schema.define(version: 2018_12_07_183301) do
     t.integer "interview_type", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "lived_outside_alaska", default: 0
     t.index ["interview_id"], name: "index_navigators_on_interview_id"
   end
 
