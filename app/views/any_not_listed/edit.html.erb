@@ -17,15 +17,3 @@
     </div>
   </div>
 <% end %>
-
-<% content_for :card_footer do %>
-  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
-    <%= f.button name: "form[any_not_listed]", value: "yes", class: "button" do %>
-      <i class="button__icon--left icon-check"></i>Yes
-    <% end %>
-
-    <%= f.button name: "form[any_not_listed]", value: "no", class: "button" do %>
-      <i class="button__icon--left icon-close"></i>No
-    <% end %>
-  <% end %>
-<% end %>

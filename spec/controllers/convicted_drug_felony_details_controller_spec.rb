@@ -10,7 +10,7 @@ RSpec.describe ConvictedDrugFelonyDetailsController do
   describe "#show?" do
     context "when someone in household is convicted_drug_felony" do
       it "returns true" do
-        application = create(:interview, anyone_convicted_drug_felony: "yes"))
+        application = create(:interview, anyone_convicted_drug_felony: "yes")
 
         show = ConvictedDrugFelonyDetailsController.show?(application)
         expect(show).to eq(true)
@@ -19,7 +19,7 @@ RSpec.describe ConvictedDrugFelonyDetailsController do
 
     context "when no one in household is convicted_drug_felony" do
       it "returns false" do
-        application = create(:interview, anyone_convicted_drug_felony: "no"))
+        application = create(:interview, anyone_convicted_drug_felony: "no")
 
         skip_step = ConvictedDrugFelonyDetailsController.show?(application)
         expect(skip_step).to eq(false)

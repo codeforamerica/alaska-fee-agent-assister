@@ -15,7 +15,7 @@ RSpec.describe ConvictedDrugFelonyDetailsForm do
 
     context "when some_attribute is not provided" do
       it "is invalid" do
-        form =  ConvictedDrugFelonyDetailsForm.new(
+        form = ConvictedDrugFelonyDetailsForm.new(
           nil,
           some_attribute: nil,
         )
@@ -48,9 +48,9 @@ RSpec.describe ConvictedDrugFelonyDetailsForm do
 
   describe ".from_interview" do
     it "assigns values from interview" do
-      interview = create(:interview, :with_navigator)
+      # interview = create(:interview, :with_navigator)
 
-      form = ConvictedDrugFelonyDetailsForm.from_interview(interview)
+      # form = ConvictedDrugFelonyDetailsForm.from_interview(interview)
 
       # expectation
     end

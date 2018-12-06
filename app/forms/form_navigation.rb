@@ -9,10 +9,10 @@ class FormNavigation
     RightsAndResponsibilitiesController,
     AnyNotListedController,
     AnyNotListedNamesController,
-    AnyoneConvictedDrugFelonyController,
-    ConvictedDrugFelonyDetailsController,
     AnyAwayFromHomeController,
     AnyAwayFromHomeNamesController,
+    AnyoneConvictedDrugFelonyController,
+    ConvictedDrugFelonyDetailsController,
     ImportantDetailsController,
   ].freeze
 

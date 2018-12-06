@@ -1,5 +1,12 @@
 class <%= anyone_class_name %>Controller < FormsController
   layout "yes_no"
+
+  helper_method :yes_no_method_name
+
+  def yes_no_method_name
+    :<%= anyone_model_method %>
+  end
+
   <%- if options.doc? -%>
   # Specify under what conditions controller should be accessible:
   # (By default it will always be shown

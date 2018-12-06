@@ -10,7 +10,7 @@ RSpec.describe <%= details_class_name %>Controller do
   describe "#show?" do
     context "when someone in household is <%= model_method %>" do
       it "returns true" do
-        application = create(:interview, <%= anyone_model_method %>: "yes"))
+        application = create(:interview, <%= anyone_model_method %>: "yes")
 
         show = <%= details_class_name %>Controller.show?(application)
         expect(show).to eq(true)
@@ -19,7 +19,7 @@ RSpec.describe <%= details_class_name %>Controller do
 
     context "when no one in household is <%= model_method %>" do
       it "returns false" do
-        application = create(:interview, <%= anyone_model_method %>: "no"))
+        application = create(:interview, <%= anyone_model_method %>: "no")
 
         skip_step = <%= details_class_name %>Controller.show?(application)
         expect(skip_step).to eq(false)
