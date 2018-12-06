@@ -2,6 +2,6 @@
 
 <% content_for :card_body do %>
   <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
-    <%= f.cfa_textarea :any_not_listed_names, "List their name(s) and relationship to the applicant.", options: {rows: "4"} %>
+    <%= f.cfa_textarea :any_not_listed_names, "List their name(s) and relationship to the #{applicant_or_client}.", options: {rows: "4"} %>
   <% end %>
 <% end %>
