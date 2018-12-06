@@ -33,6 +33,7 @@ RSpec.feature "Admin viewing dashboard" do
 
     scenario "viewing a pdf" do
       create(:interview, fee_agent_name: "Jessie Tester")
+
       visit admin_root_path
 
       click_on "Download"

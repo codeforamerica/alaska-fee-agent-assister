@@ -58,6 +58,12 @@ RSpec.feature "Interview for new application", :js do
     check "Successfully completed or satisfactorily served a period of probation or parole"
     click_on "Continue"
 
+    expect(page).to have_content "Tell us about the applicant's residency."
+    choose "Yes, they have lived outside of Alaska"
+    fill_in "When was the applicant's most recent arrival in Alaska?", with: "Two years ago"
+    choose "Yes, they intend to remain in Alaska"
+    click_on "Continue"
+
     expect(page).to have_content "Let's review some of the important details"
     click_on "Continue"
   end
