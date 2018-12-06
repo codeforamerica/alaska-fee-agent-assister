@@ -6,4 +6,6 @@ class Interview < ApplicationRecord
 
   enum any_not_listed: { unfilled: 0, yes: 1, no: 2 }, _prefix: :any_not_listed
   enum any_away_from_home: { unfilled: 0, yes: 1, no: 2 }, _prefix: :any_away_from_home
+  enum anyone_convicted_drug_felony: { unfilled: 0, yes: 1, no: 2 }, _prefix: :anyone_convicted_drug_felony
+  # Generated enums added above
 end

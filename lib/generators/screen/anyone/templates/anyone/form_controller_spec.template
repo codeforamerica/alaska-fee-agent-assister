@@ -1,0 +1,10 @@
+require "rails_helper"
+
+RSpec.describe <%= anyone_class_name %>Controller do
+  it_behaves_like "form controller base behavior"
+  it_behaves_like "form controller successful update", {
+    <%= anyone_model_method %>: "yes",
+  }
+  it_behaves_like "form controller unsuccessful update"
+  it_behaves_like "form controller always shows"
+end

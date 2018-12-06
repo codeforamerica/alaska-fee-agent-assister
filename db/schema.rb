@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_004815) do
+ActiveRecord::Schema.define(version: 2018_12_06_201205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_12_04_004815) do
     t.text "any_not_listed_names"
     t.integer "any_away_from_home", default: 0
     t.text "any_away_from_home_names"
+    t.integer "anyone_convicted_drug_felony", default: 0
   end
 
   create_table "navigators", force: :cascade do |t|

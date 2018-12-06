@@ -9,6 +9,8 @@ class FormNavigation
     RightsAndResponsibilitiesController,
     AnyNotListedController,
     AnyNotListedNamesController,
+    AnyoneConvictedDrugFelonyController,
+    ConvictedDrugFelonyDetailsController,
     AnyAwayFromHomeController,
     AnyAwayFromHomeNamesController,
     ImportantDetailsController,
