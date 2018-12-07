@@ -54,6 +54,7 @@ RSpec.feature "Interview for new application", :js do
     click_on "Yes"
 
     expect(page).to have_content "Tell us about the person who has been convicted of a drug-related felony"
+    fill_in "What is the person's name", with: "Annie"
     check "Successfully completed or satisfactorily served a period of probation or parole"
     click_on "Continue"
 

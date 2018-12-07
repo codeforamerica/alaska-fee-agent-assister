@@ -2,26 +2,34 @@ require "rails_helper"
 
 RSpec.describe ConvictedDrugFelonyDetailsForm do
   describe "validations" do
-    context "when some_attribute is provided" do
+    context "when name is provided" do
       it "is valid" do
         form = ConvictedDrugFelonyDetailsForm.new(
           nil,
-          some_attribute: "best attribute",
+          convicted_drug_felony_name: "Anne Doe",
+          completed_probation_or_parole: "",
+          completed_treatment_program: "",
+          taken_action_towards_rehabilitation: "",
+          complied_with_reentry: "",
         )
 
         expect(form).to be_valid
       end
     end
 
-    context "when some_attribute is not provided" do
+    context "when convicted_drug_felony_name is not provided" do
       it "is invalid" do
         form = ConvictedDrugFelonyDetailsForm.new(
           nil,
-          some_attribute: nil,
+          convicted_drug_felony_name: "",
+          completed_probation_or_parole: "",
+          completed_treatment_program: "",
+          taken_action_towards_rehabilitation: "",
+          complied_with_reentry: "",
         )
 
         expect(form).not_to be_valid
-        expect(form.errors[:some_attribute]).to be_present
+        expect(form.errors[:convicted_drug_felony_name]).to be_present
       end
     end
   end
@@ -31,28 +39,45 @@ RSpec.describe ConvictedDrugFelonyDetailsForm do
 
     let(:valid_params) do
       {
-        # some attributes
+        convicted_drug_felony_name: "Anne Doe",
+        completed_probation_or_parole: "yes",
+        completed_treatment_program: "",
+        taken_action_towards_rehabilitation: "",
+        complied_with_reentry: "",
       }
     end
 
-    it "persists the values to the correct models" do
+    it "persists the values to the correct models and fills in no for unprovided enums" do
       form = ConvictedDrugFelonyDetailsForm.new(interview, valid_params)
       form.valid?
       form.save
 
       interview.reload
 
-      # expectations
+      expect(interview.convicted_drug_felony_name).to eq("Anne Doe")
+      expect(interview.completed_probation_or_parole).to eq("yes")
+      expect(interview.completed_treatment_program).to eq("no")
+      expect(interview.taken_action_towards_rehabilitation).to eq("no")
+      expect(interview.complied_with_reentry).to eq("no")
     end
   end
 
   describe ".from_interview" do
     it "assigns values from interview" do
-      # interview = create(:interview, :with_navigator)
+      interview = create(:interview,
+                         convicted_drug_felony_name: "Anne Dog",
+                         completed_probation_or_parole: "yes",
+                         completed_treatment_program: "yes",
+                         taken_action_towards_rehabilitation: "yes",
+                         complied_with_reentry: "yes")
 
-      # form = ConvictedDrugFelonyDetailsForm.from_interview(interview)
+      form = ConvictedDrugFelonyDetailsForm.from_interview(interview)
 
-      # expectation
+      expect(form.convicted_drug_felony_name).to eq("Anne Dog")
+      expect(form.completed_probation_or_parole).to eq("yes")
+      expect(form.completed_treatment_program).to eq("yes")
+      expect(form.taken_action_towards_rehabilitation).to eq("yes")
+      expect(form.complied_with_reentry).to eq("yes")
     end
   end
 end

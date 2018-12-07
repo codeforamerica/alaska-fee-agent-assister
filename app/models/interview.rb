@@ -7,5 +7,10 @@ class Interview < ApplicationRecord
   enum any_not_listed: { unfilled: 0, yes: 1, no: 2 }, _prefix: :any_not_listed
   enum any_away_from_home: { unfilled: 0, yes: 1, no: 2 }, _prefix: :any_away_from_home
   enum anyone_convicted_drug_felony: { unfilled: 0, yes: 1, no: 2 }, _prefix: :anyone_convicted_drug_felony
+  enum completed_probation_or_parole: { unfilled: 0, yes: 1, no: 2 }, _prefix: :completed_probation_or_parole
+  enum completed_treatment_program: { unfilled: 0, yes: 1, no: 2 }, _prefix: :completed_treatment_program
+  enum taken_action_towards_rehabilitation: { unfilled: 0, yes: 1, no: 2 },
+       _prefix: :taken_action_towards_rehabilitation
+  enum complied_with_reentry: { unfilled: 0, yes: 1, no: 2 }, _prefix: :complied_with_reentry
   # Generated enums added above
 end

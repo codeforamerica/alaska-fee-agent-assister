@@ -2,7 +2,7 @@ Description:
     Create files for adding a new "Is anyone?" / "Who is?" section.
 
 Example:
-    rails generate screen:who_is Veteran
+    rails generate screen:anyone Veteran
 
     This will create:
         # AnyoneVeteran

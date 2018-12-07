@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe ConvictedDrugFelonyDetailsController do
   it_behaves_like "form controller base behavior"
   it_behaves_like "form controller successful update", {
-    attribute: "value",
+    convicted_drug_felony_name: "Anne Dog",
   }
   it_behaves_like "form controller unsuccessful update"
 

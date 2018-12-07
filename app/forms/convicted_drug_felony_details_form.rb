@@ -1,17 +1,22 @@
 class ConvictedDrugFelonyDetailsForm < Form
-  # Whitelist top-level parameter names for Interview, e.g.
-  #
-  #   given params: { form: { living_situation: "stable_housing" } }
-  #
-  #   set_attributes_for :interview, :living_situation
-  #
-  # Delete the method if you aren't updating the Interview.
-  set_attributes_for :interview, :attribute_name
+  set_attributes_for :interview,
+                     :convicted_drug_felony_name,
+                     :completed_probation_or_parole,
+                     :completed_treatment_program,
+                     :taken_action_towards_rehabilitation,
+                     :complied_with_reentry
 
-  # Add any validations below. Be sure to include helpful error messages.
-  validates_presence_of :attribute_name, message: "Validation error"
+  validates_presence_of :convicted_drug_felony_name, message: "Make sure to include their name."
 
   def save
-    interview.update(attributes_for(:interview))
+    enum_keys = %i[
+      completed_probation_or_parole
+      completed_treatment_program
+      taken_action_towards_rehabilitation
+      complied_with_reentry
+    ]
+    enum_values = attributes_for(:interview).slice(*enum_keys)
+    enum_values.update(enum_values) { |_, val| val == "yes" ? "yes" : "no" }
+    interview.update(enum_values.merge(attributes_for(:interview).except(*enum_keys)))
   end
 end
