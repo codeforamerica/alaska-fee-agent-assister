@@ -9,15 +9,3 @@
     <li>Serving prison time</li>
   </ul>
 <% end %>
-
-<% content_for :card_footer do %>
-  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
-    <%= f.button name: "form[any_away_from_home]", value: "yes", class: "button" do %>
-      <i class="button__icon--left icon-check green-check"></i>Yes
-    <% end %>
-
-    <%= f.button name: "form[any_away_from_home]", value: "no", class: "button" do %>
-      <i class="button__icon--left icon-close red-x"></i>No
-    <% end %>
-  <% end %>
-<% end %>
