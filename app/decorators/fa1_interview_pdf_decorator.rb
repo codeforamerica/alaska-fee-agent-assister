@@ -17,6 +17,8 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
       provided_rights_and_responsibilities: yes_no_value(explained_rights),
       any_not_listed: any_not_listed,
       any_not_listed_names: any_not_listed_names,
+      any_away_from_home: any_away_from_home,
+      any_away_from_home_reasons: any_away_from_home_names,
     }
   end
 
