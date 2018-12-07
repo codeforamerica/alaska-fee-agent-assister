@@ -1,5 +1,5 @@
 Description:
-    Create files for adding a new "Is anyone?" / "Who is?" section.
+    Create files for adding a new "Is anyone?" / "Details?" section.
 
 Example:
     rails generate screen:anyone Veteran
@@ -13,13 +13,13 @@ Example:
         spec/controllers/anyone_veteran_controller_spec.rb
         app/views/anyone_veteran/edit.html.erb
 
-        # WhoIsVeteran
+        # VeteranDetails
 
-        app/forms/who_is_veteran_form.rb
-        spec/forms/who_is_veteran_form_spec.rb
-        app/controllers/who_is_veteran_controller.rb
-        spec/controllers/who_is_veteran_controller_spec.rb
-        app/views/who_is_veteran/edit.html.erb
+        app/forms/veteran_details_form.rb
+        spec/forms/veteran_details_form_spec.rb
+        app/controllers/veteran_details_controller.rb
+        spec/controllers/veteran_details_controller_spec.rb
+        app/views/veteran_details/edit.html.erb
 
     This will add:
-        * `veteran` enum to Interview
+        * `anyone_veteran` enum to Interview
