@@ -1,0 +1,5 @@
+require "rails_helper"
+
+RSpec.describe <%= anyone_class_name %>Form do
+  it_behaves_like "anyone form", <%= anyone_model_method %>
+end

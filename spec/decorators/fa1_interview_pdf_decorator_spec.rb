@@ -19,7 +19,14 @@ describe Fa1InterviewPdfDecorator do
                selected_atap: false,
                selected_apa: false,
                selected_cama: false,
-               explained_rights: true),
+               explained_rights: true,
+               any_not_listed: "yes",
+               any_away_from_home: "no",
+               anyone_convicted_drug_felony: "yes",
+               completed_probation_or_parole: "yes",
+               completed_treatment_program: "yes",
+               taken_action_towards_rehabilitation: "yes",
+               complied_with_reentry: "yes"),
       ).attributes
 
       fields = PdfForms::PdftkWrapper.new.get_fields("app/lib/pdfs/FA1.pdf")
@@ -33,6 +40,12 @@ describe Fa1InterviewPdfDecorator do
         cama
         explained_rights_and_responsibilities
         provided_rights_and_responsibilities
+        any_not_listed
+        any_away_from_home
+        any_drug_felony
+        served_parole
+        mandatory_drug_treatment
+        action_towards_rehabilitation
       ]
       checkbox_fields.each do |checkbox_field|
         valid_options = fields.detect { |field| field.name == checkbox_field.to_s }.options
@@ -53,7 +66,17 @@ describe Fa1InterviewPdfDecorator do
                          selected_general_relief: true,
                          selected_atap: false,
                          selected_apa: false,
-                         selected_cama: false)
+                         selected_cama: false,
+                         any_not_listed: "yes",
+                         any_not_listed_names: "Sophie",
+                         any_away_from_home: "yes",
+                         any_away_from_home_names: "Frank",
+                         anyone_convicted_drug_felony: "yes",
+                         convicted_drug_felony_name: "Anne Dog",
+                         completed_probation_or_parole: "no",
+                         completed_treatment_program: "no",
+                         taken_action_towards_rehabilitation: "no",
+                         complied_with_reentry: "unfilled")
 
       attributes = Fa1InterviewPdfDecorator.new(interview).attributes
 
@@ -69,6 +92,16 @@ describe Fa1InterviewPdfDecorator do
       expect(attributes[:alaska_temporary_assistance]).to eq "Off"
       expect(attributes[:adult_public_assistance]).to eq "Off"
       expect(attributes[:cama]).to eq "Off"
+      expect(attributes[:any_not_listed]).to eq "yes"
+      expect(attributes[:any_not_listed_names]).to eq "Sophie"
+      expect(attributes[:any_away_from_home]).to eq "yes"
+      expect(attributes[:any_away_from_home_reasons]).to eq "Frank"
+      expect(attributes[:any_drug_felony]).to eq "yes"
+      expect(attributes[:any_drug_felony_name]).to eq "Anne Dog"
+      expect(attributes[:served_parole]).to eq "no"
+      expect(attributes[:mandatory_drug_treatment]).to eq "no"
+      expect(attributes[:action_towards_rehabilitation]).to eq "no"
+      expect(attributes[:re_entry_compliance]).to eq "Off"
     end
 
     it "fills in both explained and provided for rights and responsibilities" do

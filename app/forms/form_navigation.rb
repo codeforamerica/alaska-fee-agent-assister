@@ -11,6 +11,8 @@ class FormNavigation
     AnyNotListedNamesController,
     AnyAwayFromHomeController,
     AnyAwayFromHomeNamesController,
+    AnyoneConvictedDrugFelonyController,
+    ConvictedDrugFelonyDetailsController,
     ImportantDetailsController,
   ].freeze
 

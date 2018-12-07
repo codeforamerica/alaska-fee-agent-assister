@@ -5,17 +5,21 @@
 <% end %>
 
 <% content_for :card_footer do %>
-  <%= form_with url: current_path, method: :put, local: true %>
+  <%= form_with url: current_path, method: :put, local: true do %>
     <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
-      <%= f.hidden_field(:interview_type, value: "application") %>
-      <button class="button button--primary" type="submit">Submit an application</button>
-    <% end %>
-  </form>
+      <div class="form-question">
+        <%= f.cfa_single_tap_button(:interview_type,
+                                    "Submit an application",
+                                    "application",
+                                    classes: ["button--primary"]) %>
+      </div>
 
-  <%= form_with url: current_path, method: :put, local: true %>
-    <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
-      <%= f.hidden_field(:interview_type, value: "renewal") %>
-      <button class="button button--primary" type="submit">Submit a renewal</button>
+      <div class="form-question">
+        <%= f.cfa_single_tap_button(:interview_type,
+                                    "Submit a renewal",
+                                    "renewal",
+                                    classes: ["button--primary"]) %>
+      </div>
     <% end %>
-  </form>
+  <% end %>
 <% end %>

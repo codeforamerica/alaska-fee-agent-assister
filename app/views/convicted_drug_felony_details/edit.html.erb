@@ -1,0 +1,25 @@
+<% content_for :card_title, "Tell us about the person who has been convicted of a drug-related felony." %>
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <%= f.cfa_input_field :convicted_drug_felony_name, "What is the person's name?" %>
+    <%= f.cfa_checkbox_set_with_none([
+       {
+           label: "Successfully completed or satisfactorily served a period of probation or parole",
+           method: :completed_probation_or_parole,
+       },
+       {
+           label: "Currently serving or successfully completed the mandatory participation in a drug or alcohol treatment program",
+           method: :completed_treatment_program,
+       },
+       {
+           label: "Taken action towards rehabilitation, including participation in a drug or alcohol treatment program",
+           method: :taken_action_towards_rehabilitation,
+       },
+       {
+           label: "Successfully complied with the requirements of the person's reentry plan",
+           method: :complied_with_reentry,
+       },
+    ]) %>
+  <% end %>
+<% end %>

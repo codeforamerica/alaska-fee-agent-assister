@@ -1,0 +1,25 @@
+Description:
+    Create files for adding a new "Is anyone?" / "Details?" section.
+
+Example:
+    rails generate screen:anyone Veteran
+
+    This will create:
+        # AnyoneVeteran
+
+        app/forms/anyone_veteran_form.rb
+        spec/forms/anyone_veteran_form_spec.rb
+        app/controllers/anyone_veteran_controller.rb
+        spec/controllers/anyone_veteran_controller_spec.rb
+        app/views/anyone_veteran/edit.html.erb
+
+        # VeteranDetails
+
+        app/forms/veteran_details_form.rb
+        spec/forms/veteran_details_form_spec.rb
+        app/controllers/veteran_details_controller.rb
+        spec/controllers/veteran_details_controller_spec.rb
+        app/views/veteran_details/edit.html.erb
+
+    This will add:
+        * `anyone_veteran` enum to Interview
