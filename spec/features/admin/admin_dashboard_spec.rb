@@ -32,13 +32,7 @@ RSpec.feature "Admin viewing dashboard" do
     end
 
     scenario "viewing a pdf" do
-      create(:interview,
-             fee_agent_name: "Jessie Tester",
-             client_name: "Jane Doe",
-             attendee_names: "",
-             any_not_listed: "no",
-             any_away_from_home: "yes",
-             any_away_from_home_names: "James Bond")
+      create(:interview, fee_agent_name: "Jessie Tester")
       visit admin_root_path
 
       click_on "Download"
@@ -46,11 +40,8 @@ RSpec.feature "Admin viewing dashboard" do
       temp_file = write_raw_pdf_to_temp_file(source: page.source)
       pdf_values = filled_in_values(temp_file.path)
 
+      # Minimal testing to make sure PDF isn't corrupted
       expect(pdf_values["fa_name"]).to include("Jessie Tester")
-      expect(pdf_values["applicant_name"]).to include("Jane Doe")
-      expect(pdf_values["any_not_listed"]).to include("no")
-      expect(pdf_values["any_away_from_home"]).to include("yes")
-      expect(pdf_values["any_away_from_home_reasons"]).to include("James Bond")
     end
   end
 end
