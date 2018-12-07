@@ -16,7 +16,7 @@ class ConvictedDrugFelonyDetailsForm < Form
       complied_with_reentry
     ]
     enum_values = attributes_for(:interview).slice(*enum_keys)
-    enum_values.update(enum_values) { |_, val| val == "yes" ? "yes" : "no" }
+    enum_values.update(enum_values) { |_, val| val == "1" ? "yes" : "no" }
     interview.update(enum_values.merge(attributes_for(:interview).except(*enum_keys)))
   end
 end

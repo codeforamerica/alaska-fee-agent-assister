@@ -40,8 +40,8 @@ RSpec.describe ConvictedDrugFelonyDetailsForm do
     let(:valid_params) do
       {
         convicted_drug_felony_name: "Anne Doe",
-        completed_probation_or_parole: "yes",
-        completed_treatment_program: "",
+        completed_probation_or_parole: "1",
+        completed_treatment_program: "1",
         taken_action_towards_rehabilitation: "",
         complied_with_reentry: "",
       }
@@ -56,7 +56,7 @@ RSpec.describe ConvictedDrugFelonyDetailsForm do
 
       expect(interview.convicted_drug_felony_name).to eq("Anne Doe")
       expect(interview.completed_probation_or_parole).to eq("yes")
-      expect(interview.completed_treatment_program).to eq("no")
+      expect(interview.completed_treatment_program).to eq("yes")
       expect(interview.taken_action_towards_rehabilitation).to eq("no")
       expect(interview.complied_with_reentry).to eq("no")
     end

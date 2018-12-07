@@ -18,7 +18,12 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
       any_not_listed: any_not_listed,
       any_not_listed_names: any_not_listed_names,
       any_away_from_home: any_away_from_home,
-      any_away_from_home_reasons: any_away_from_home_names,
+      any_drug_felony: yes_no_enum(anyone_convicted_drug_felony),
+      any_drug_felony_name: convicted_drug_felony_name,
+      served_parole: yes_no_enum(completed_probation_or_parole),
+      mandatory_drug_treatment: yes_no_enum(completed_treatment_program),
+      action_towards_rehabilitation: yes_no_enum(taken_action_towards_rehabilitation),
+      re_entry_compliance: yes_no_enum(complied_with_reentry),
     }
   end
 
@@ -29,6 +34,10 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
   end
 
   private
+
+  def yes_no_enum(value)
+    value == "unfilled" ? "Off" : value
+  end
 
   def yes_no_value(boolean)
     boolean ? "yes" : "no"
