@@ -14,6 +14,8 @@ class FormNavigation
     AnyoneConvictedDrugFelonyController,
     ConvictedDrugFelonyDetailsController,
     ResidencyController,
+    AnyoneTribeController,
+    TribeDetailsController,
     ImportantDetailsController,
   ].freeze
 

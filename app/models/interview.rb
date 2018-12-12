@@ -12,6 +12,7 @@ class Interview < ApplicationRecord
   enum taken_action_towards_rehabilitation: { unfilled: 0, yes: 1, no: 2 },
        _prefix: :taken_action_towards_rehabilitation
   enum complied_with_reentry: { unfilled: 0, yes: 1, no: 2 }, _prefix: :complied_with_reentry
+  enum anyone_tribe: { unfilled: 0, yes: 1, no: 2 }, _prefix: :anyone_tribe
   # Generated enums added above
 
   enum intend_to_stay: { unfilled: 0, yes: 1, no: 2 }, _prefix: :intend_to_stay

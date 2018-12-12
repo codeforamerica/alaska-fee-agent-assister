@@ -1,0 +1,7 @@
+<% content_for :card_title, "Tell us about the people who are in a federally recognized tribe." %>
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <%= f.cfa_textarea :tribe_details, "List the names of anyone on the #{application_or_renewal} who is in a federally recognized tribe and what tribe they are a part of.", options: {rows: "4"} %>
+  <% end %>
+<% end %>

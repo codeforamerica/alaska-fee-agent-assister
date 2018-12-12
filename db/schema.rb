@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_07_183301) do
+ActiveRecord::Schema.define(version: 2018_12_12_001148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,13 +37,15 @@ ActiveRecord::Schema.define(version: 2018_12_07_183301) do
     t.integer "any_away_from_home", default: 0
     t.text "any_away_from_home_names"
     t.integer "anyone_convicted_drug_felony", default: 0
+    t.string "arrival_in_alaska"
+    t.integer "intend_to_stay", default: 0
     t.string "convicted_drug_felony_name"
     t.integer "completed_probation_or_parole", default: 0
     t.integer "completed_treatment_program", default: 0
     t.integer "taken_action_towards_rehabilitation", default: 0
     t.integer "complied_with_reentry", default: 0
-    t.string "arrival_in_alaska"
-    t.integer "intend_to_stay", default: 0
+    t.integer "anyone_tribe", default: 0
+    t.text "tribe_details"
   end
 
   create_table "navigators", force: :cascade do |t|
