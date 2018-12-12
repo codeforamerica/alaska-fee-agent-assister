@@ -64,6 +64,13 @@ RSpec.feature "Interview for new application", :js do
     choose "Yes, they intend to remain in Alaska"
     click_on "Continue"
 
+    expect(page).to have_content "Is anyone on the application a member of a federally recognized tribe?"
+    click_on "Yes"
+
+    expect(page).to have_content "Tell us about the people who are in a federally recognized tribe."
+    fill_in "form[tribe_details]", with: "Damien Marley and Nas"
+    click_on "Continue"
+
     expect(page).to have_content "Let's review some of the important details"
     click_on "Continue"
   end
