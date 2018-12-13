@@ -16,6 +16,8 @@ class FormNavigation
     ResidencyController,
     AnyoneTribeController,
     TribeDetailsController,
+    AnyoneStoppedWorkController,
+    StoppedWorkDetailsController,
     QuestCardController,
     ImportantDetailsController,
   ].freeze

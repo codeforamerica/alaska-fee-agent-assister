@@ -71,6 +71,13 @@ RSpec.feature "Interview for new application", :js do
     fill_in "form[tribe_details]", with: "Damien Marley and Nas"
     click_on "Continue"
 
+    expect(page).to have_content "this application have work that was stopped or reduced within the last 60 days?"
+    click_on "Yes"
+
+    expect(page).to have_content "Tell us about work that has stopped or has been reduced in the last 60 days."
+    fill_in "form[stopped_work_details]", with: "Yasin Bey and Talib Kweli"
+    click_on "Continue"
+
     expect(page).to have_content "Does the applicant currently have an Alaska Quest Card?"
     click_on "No"
 
