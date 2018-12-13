@@ -1,0 +1,13 @@
+<% content_for :card_title, "Does anyone on this #{application_or_renewal} have <strong>work that was stopped or reduced</strong> within the last 60 days?".html_safe %>
+
+<% content_for :card_help, "Please check carefully. This can hold upcases if DPA income checks shows higher income than reported." %>
+
+<% content_for :card_body do %>
+  <ul class="highlighted">
+    <div>For example:</div>
+    <li>Seasonal work ended</li>
+    <li>They were let go</li>
+    <li>Hours were cut</li>
+    <li>Project work ended</li>
+  </ul>
+<% end %>
