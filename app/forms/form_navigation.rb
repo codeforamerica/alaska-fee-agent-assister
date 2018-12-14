@@ -19,6 +19,8 @@ class FormNavigation
     AnyoneStoppedWorkController,
     StoppedWorkDetailsController,
     QuestCardController,
+    AnyoneFilingTaxReturnController,
+    FilingTaxReturnDetailsController,
     ExpensesPaymentDetailsController,
     CamaDetailsController,
     ImportantDetailsController,

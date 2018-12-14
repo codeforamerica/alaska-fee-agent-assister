@@ -33,6 +33,8 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
       any_hhm_work_stopped: yes_no_enum(anyone_stopped_work),
       hhm_work_stopped_name_and_reason: stopped_work_details,
       alaska_quest_card: yes_no_enum(has_quest_card),
+      filing_federal_tax_return: yes_no_enum(anyone_filing_tax_return),
+      who_is_filing_and_dependents: filing_tax_return_details,
     }
   end
 

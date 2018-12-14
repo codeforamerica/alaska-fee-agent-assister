@@ -1,0 +1,9 @@
+<% content_for :card_title, "Tell us about the tax return." %>
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <%= f.cfa_textarea :filing_tax_return_details,
+      "Who in the household will be filing and will there be any tax dependent(s). If so, who?",
+      options: {rows: "4"} %>
+  <% end %>
+<% end %>
