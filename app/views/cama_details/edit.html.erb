@@ -1,0 +1,10 @@
+<% content_for :card_title, "If applying for CAMA, please list the specific medical need." %>
+
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <%= f.cfa_textarea :cama_details,
+      "List the need and make sure to include the doctor's name and phone number.",
+      options: {rows: "4"} %>
+  <% end %>
+<% end %>

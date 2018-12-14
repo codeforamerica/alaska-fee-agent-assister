@@ -81,6 +81,10 @@ RSpec.feature "Interview for new application", :js do
     expect(page).to have_content "Does the applicant currently have an Alaska Quest Card?"
     click_on "No"
 
+    expect(page).to have_content "If applying for CAMA, please list the specific medical need."
+    fill_in "form[cama_details]", with: "Tests pass locally, but not on CI. Help me doc."
+    click_on "Continue"
+
     expect(page).to have_content "Let's review some of the important details"
     click_on "Continue"
   end
