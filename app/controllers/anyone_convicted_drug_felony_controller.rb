@@ -1,8 +1,4 @@
-class AnyoneConvictedDrugFelonyController < FormsController
-  layout "yes_no"
-
-  helper_method :yes_no_method_name
-
+class AnyoneConvictedDrugFelonyController < YesNoFormsController
   def yes_no_method_name
     :anyone_convicted_drug_felony
   end
