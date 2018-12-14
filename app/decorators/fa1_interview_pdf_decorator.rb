@@ -27,6 +27,7 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
       re_entry_compliance: yes_no_enum(complied_with_reentry),
       when_alaska_arrival: arrival_in_alaska,
       stay_in_alaska: intend_to_stay,
+      explain_expenses_payment: expenses_payment_details,
     }
   end
 

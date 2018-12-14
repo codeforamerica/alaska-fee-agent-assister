@@ -1,0 +1,20 @@
+<% content_for :card_title, "Explain how the household has been supporting itself before applying for assistance." %>
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <%= f.cfa_textarea :expenses_payment_details,
+                       "<p>If the applicant claimed \"no income,\" explain how the expenses have been paid, or note that they are due or unpaid.</p>
+                        <div class='notice notice--important with-illustration'>
+                          <div class='illustration-holder'>
+                            <i class='illustration illustration--important'></i>
+                          </div>
+                           <div class='notice-content'>
+                            The more details you can provide, the more likely the #{applicant_or_client} can be approved without issues.
+                          </div>
+                        </div>",
+                       options: {
+                         rows: "4",
+                         placeholder: "E.g., lives with brother - doesn’t pay rent. Gets PFD of $1600, monthly SSA payments of $500, monthly food box from food bank, relies on sustinence fishing and hunting.",
+                       } %>
+  <% end %>
+<% end %>
