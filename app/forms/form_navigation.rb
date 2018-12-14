@@ -19,6 +19,7 @@ class FormNavigation
     AnyoneStoppedWorkController,
     StoppedWorkDetailsController,
     QuestCardController,
+    ExpensesPaymentDetailsController,
     CamaDetailsController,
     ImportantDetailsController,
   ].freeze

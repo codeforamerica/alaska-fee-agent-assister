@@ -78,7 +78,8 @@ describe Fa1InterviewPdfDecorator do
                          taken_action_towards_rehabilitation: "no",
                          complied_with_reentry: "unfilled",
                          arrival_in_alaska: "",
-                         intend_to_stay: "yes")
+                         intend_to_stay: "yes",
+                         expenses_payment_details: "explanation")
 
       attributes = Fa1InterviewPdfDecorator.new(interview).attributes
 
@@ -106,6 +107,7 @@ describe Fa1InterviewPdfDecorator do
       expect(attributes[:re_entry_compliance]).to eq "Off"
       expect(attributes[:when_alaska_arrival]).to eq ""
       expect(attributes[:stay_in_alaska]).to eq "yes"
+      expect(attributes[:explain_expenses_payment]).to eq "explanation"
     end
 
     it "fills in both explained and provided for rights and responsibilities" do

@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2018_12_14_223641) do
     t.text "stopped_work_details"
     t.integer "has_quest_card", default: 0
     t.text "cama_details"
+    t.string "expenses_payment_details"
   end
 
   create_table "navigators", force: :cascade do |t|
