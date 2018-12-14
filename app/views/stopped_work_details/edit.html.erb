@@ -1,21 +1,18 @@
 <% content_for :card_title, "Tell us about work that has stopped or has been reduced in the last 60 days." %>
 
 <% content_for :card_body do %>
-  <p>List the person, the job, when and why the job ended or was reduced, and the name and phone number of the employer</p>
-
-  <div class="notice notice--important with-illustration">
-    <div class="illustration-holder">
-      <i class="illustration illustration--important"></i>
-    </div>
-
-    <div class="notice-content">
-      The more details you can provide, the more likely the <%= applicant_or_client %> can be approved without issues.
-    </div>
-  </div>
-
   <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
     <%= f.cfa_textarea :stopped_work_details,
-      "",
+      "<p>List the person, the job, when and why the job ended or was reduced, and the name and phone number of the employer</p>
+      <div class='notice notice--important with-illustration'>
+        <div class='illustration-holder'>
+          <i class='illustration illustration--important'></i>
+        </div>
+
+        <div class='notice-content'>
+          The more details you can provide, the more likely the #{applicant_or_client} can be approved without issues.
+        </div>
+      </div>",
       options: {rows: "4"} %>
   <% end %>
 <% end %>
