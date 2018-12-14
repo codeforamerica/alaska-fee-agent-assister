@@ -21,8 +21,8 @@ RSpec.describe StoppedWorkDetailsController do
       it "returns false" do
         application = create(:interview, anyone_stopped_work: "no")
 
-        skip_step = StoppedWorkDetailsController.show?(application)
-        expect(skip_step).to eq(false)
+        show = StoppedWorkDetailsController.show?(application)
+        expect(show).to eq(false)
       end
     end
   end

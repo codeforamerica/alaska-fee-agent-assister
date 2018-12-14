@@ -21,8 +21,8 @@ RSpec.describe ConvictedDrugFelonyDetailsController do
       it "returns false" do
         application = create(:interview, anyone_convicted_drug_felony: "no")
 
-        skip_step = ConvictedDrugFelonyDetailsController.show?(application)
-        expect(skip_step).to eq(false)
+        show = ConvictedDrugFelonyDetailsController.show?(application)
+        expect(show).to eq(false)
       end
     end
   end
