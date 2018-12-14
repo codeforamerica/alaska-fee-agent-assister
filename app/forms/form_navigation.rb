@@ -23,6 +23,7 @@ class FormNavigation
     FilingTaxReturnDetailsController,
     ExpensesPaymentDetailsController,
     CamaDetailsController,
+    OtherInformationController,
     ImportantDetailsController,
   ].freeze
 
