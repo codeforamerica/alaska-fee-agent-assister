@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_12_001148) do
+ActiveRecord::Schema.define(version: 2018_12_14_171249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2018_12_12_001148) do
     t.integer "complied_with_reentry", default: 0
     t.integer "anyone_tribe", default: 0
     t.text "tribe_details"
+    t.integer "has_quest_card", default: 0
   end
 
   create_table "navigators", force: :cascade do |t|
