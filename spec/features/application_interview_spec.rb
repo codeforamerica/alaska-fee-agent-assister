@@ -30,6 +30,7 @@ RSpec.feature "Interview for new application", :js do
     expect(page).to have_content "What program(s) is the applicant applying for?"
     check "Food stamps"
     check "Medicaid"
+    check "CAMA"
     click_on "Continue"
 
     expect(page).to have_content "Take a moment to go over their rights and responsibilities"
