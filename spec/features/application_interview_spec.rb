@@ -98,6 +98,10 @@ RSpec.feature "Interview for new application", :js do
     fill_in "form[cama_details]", with: "Tests pass locally, but not on CI. Help me doc."
     click_on "Continue"
 
+    expect(page).to have_content "Any other information that would be helpful for the case worker to know?"
+    fill_in "Enter any other information or comments", with: "Mac Miller and Anderson .Paak"
+    click_on "Continue"
+
     expect(page).to have_content "Let's review some of the important details"
     click_on "Continue"
   end

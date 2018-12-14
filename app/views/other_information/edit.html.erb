@@ -1,0 +1,7 @@
+<% content_for :card_title, "Any other information that would be helpful for the case worker to know?" %>
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <%= f.cfa_textarea :other_info, "Enter any other information or comments.", options: {rows: "4"} %>
+  <% end %>
+<% end %>
