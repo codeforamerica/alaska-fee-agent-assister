@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 2018_12_14_171249) do
     t.integer "complied_with_reentry", default: 0
     t.integer "anyone_tribe", default: 0
     t.text "tribe_details"
+    t.integer "has_quest_card", default: 0
     t.integer "anyone_stopped_work", default: 0
     t.text "stopped_work_details"
-    t.integer "has_quest_card", default: 0
   end
 
   create_table "navigators", force: :cascade do |t|
