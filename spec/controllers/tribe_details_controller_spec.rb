@@ -21,8 +21,8 @@ RSpec.describe TribeDetailsController do
       it "returns false" do
         application = create(:interview, anyone_tribe: "no")
 
-        skip_step = TribeDetailsController.show?(application)
-        expect(skip_step).to eq(false)
+        show = TribeDetailsController.show?(application)
+        expect(show).to eq(false)
       end
     end
   end
