@@ -82,6 +82,13 @@ RSpec.feature "Interview for new application", :js do
     expect(page).to have_content "Does the applicant currently have an Alaska Quest Card?"
     click_on "No"
 
+    expect(page).to have_content "Is anyone on the application planning to file a Federal Income Tax Return?"
+    click_on "Yes"
+
+    expect(page).to have_content "Tell us about the tax return."
+    fill_in "form[filing_tax_return_details]", with: "Lauryn Hill and D'Angelo"
+    click_on "Continue"
+
     expect(page).to have_content "Explain how the household has been supporting itself before applying for assistance."
     fill_in "If the applicant claimed \"no income,\" explain how the expenses have been paid",
             with: "I'm crashing on my friend's couch right now so I don't pay rent"

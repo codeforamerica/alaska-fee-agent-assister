@@ -29,7 +29,8 @@ describe Fa1InterviewPdfDecorator do
                complied_with_reentry: "yes",
                anyone_tribe: "yes",
                anyone_stopped_work: "yes",
-               has_quest_card: "yes"),
+               has_quest_card: "yes",
+               anyone_filing_tax_return: "yes"),
       ).attributes
 
       fields = PdfForms::PdftkWrapper.new.get_fields("app/lib/pdfs/FA1.pdf")
@@ -52,6 +53,7 @@ describe Fa1InterviewPdfDecorator do
         tribal_member
         any_hhm_work_stopped
         alaska_quest_card
+        filing_federal_tax_return
       ]
       checkbox_fields.each do |checkbox_field|
         valid_options = fields.detect { |field| field.name == checkbox_field.to_s }.options
@@ -90,7 +92,9 @@ describe Fa1InterviewPdfDecorator do
                          tribe_details: "more tribe details",
                          anyone_stopped_work: "yes",
                          stopped_work_details: "stopped work name",
-                         has_quest_card: "yes")
+                         has_quest_card: "yes",
+                         anyone_filing_tax_return: "yes",
+                         filing_tax_return_details: "tax return details")
 
       attributes = Fa1InterviewPdfDecorator.new(interview).attributes
 
@@ -124,6 +128,8 @@ describe Fa1InterviewPdfDecorator do
       expect(attributes[:tribal_member_name]).to eq "more tribe details"
       expect(attributes[:hhm_work_stopped_name_and_reason]).to eq "stopped work name"
       expect(attributes[:alaska_quest_card]).to eq "yes"
+      expect(attributes[:filing_federal_tax_return]).to eq "yes"
+      expect(attributes[:who_is_filing_and_dependents]).to eq "tax return details"
     end
 
     it "fills in both explained and provided for rights and responsibilities" do
