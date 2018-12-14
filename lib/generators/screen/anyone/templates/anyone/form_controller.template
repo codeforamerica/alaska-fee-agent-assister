@@ -1,8 +1,4 @@
-class <%= anyone_class_name %>Controller < FormsController
-  layout "yes_no"
-
-  helper_method :yes_no_method_name
-
+class <%= anyone_class_name %>Controller < YesNoFormsController
   def yes_no_method_name
     :<%= anyone_model_method %>
   end
