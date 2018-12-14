@@ -71,6 +71,9 @@ RSpec.feature "Interview for new application", :js do
     fill_in "form[tribe_details]", with: "Damien Marley and Nas"
     click_on "Continue"
 
+    expect(page).to have_content "Does the applicant currently have an Alaska Quest Card?"
+    click_on "No"
+
     expect(page).to have_content "Let's review some of the important details"
     click_on "Continue"
   end
