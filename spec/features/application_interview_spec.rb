@@ -102,6 +102,12 @@ RSpec.feature "Interview for new application", :js do
     fill_in "Enter any other information or comments", with: "Mac Miller and Anderson .Paak"
     click_on "Continue"
 
+    expect(page).to have_content "Let's review a few important parts of the application."
+    check "form[client_sign_and_date]"
+    check "form[fa_sign_and_date]"
+    check "form[all_ssns_included]"
+    click_on "Continue"
+
     expect(page).to have_content "Let's review some of the important details"
     click_on "Continue"
   end

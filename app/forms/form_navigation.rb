@@ -24,6 +24,7 @@ class FormNavigation
     ExpensesPaymentDetailsController,
     CamaDetailsController,
     OtherInformationController,
+    ImportantConfirmationsController,
     ImportantDetailsController,
   ].freeze
 

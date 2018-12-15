@@ -1,0 +1,18 @@
+<% content_for :card_title, "Let's review a few important parts of the application." %>
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+
+    <%= f.cfa_checkbox_set(:client_sign_and_date,
+      [{ label: "Yes", method: :client_sign_and_date }],
+      label_text: "Did the #{applicant_or_client} sign and date the #{application_or_renewal} and all other forms needing signature?") %>
+
+    <%= f.cfa_checkbox_set(:fa_sign_and_date,
+      [{ label: "Yes", method: :fa_sign_and_date }],
+      label_text: "Did you, as Fee Agent, sign and date the #{application_or_renewal}?") %>
+
+    <%= f.cfa_checkbox_set(:all_ssns_included,
+      [{ label: "Yes", method: :all_ssns_included }],
+      label_text: "Are all the household members' social security numbers listed on the #{application_or_renewal}?") %>
+  <% end %>
+<% end %>
