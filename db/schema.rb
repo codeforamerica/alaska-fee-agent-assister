@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_14_225739) do
+ActiveRecord::Schema.define(version: 2018_12_14_234524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,9 +51,12 @@ ActiveRecord::Schema.define(version: 2018_12_14_225739) do
     t.integer "has_quest_card", default: 0
     t.integer "anyone_filing_tax_return", default: 0
     t.text "filing_tax_return_details"
-    t.text "cama_details"
     t.string "expenses_payment_details"
+    t.text "cama_details"
     t.text "other_info"
+    t.boolean "client_sign_and_date"
+    t.boolean "fa_sign_and_date"
+    t.boolean "all_ssns_included"
   end
 
   create_table "navigators", force: :cascade do |t|
