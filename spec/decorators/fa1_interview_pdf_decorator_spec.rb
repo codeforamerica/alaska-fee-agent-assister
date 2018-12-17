@@ -94,7 +94,8 @@ describe Fa1InterviewPdfDecorator do
                          stopped_work_details: "stopped work name",
                          has_quest_card: "yes",
                          anyone_filing_tax_return: "yes",
-                         filing_tax_return_details: "tax return details")
+                         filing_tax_return_details: "tax return details",
+                         cama_details: "cama details")
 
       attributes = Fa1InterviewPdfDecorator.new(interview).attributes
 
@@ -130,6 +131,7 @@ describe Fa1InterviewPdfDecorator do
       expect(attributes[:alaska_quest_card]).to eq "yes"
       expect(attributes[:filing_federal_tax_return]).to eq "yes"
       expect(attributes[:who_is_filing_and_dependents]).to eq "tax return details"
+      expect(attributes[:cama_medical_need]).to eq "cama details"
     end
 
     it "fills in both explained and provided for rights and responsibilities" do
