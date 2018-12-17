@@ -35,6 +35,7 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
       alaska_quest_card: yes_no_enum(has_quest_card),
       filing_federal_tax_return: yes_no_enum(anyone_filing_tax_return),
       who_is_filing_and_dependents: filing_tax_return_details,
+      cama_medical_need: cama_details,
     }
   end
 
