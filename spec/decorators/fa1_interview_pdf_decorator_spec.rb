@@ -26,7 +26,10 @@ describe Fa1InterviewPdfDecorator do
                completed_probation_or_parole: "yes",
                completed_treatment_program: "yes",
                taken_action_towards_rehabilitation: "yes",
-               complied_with_reentry: "yes"),
+               complied_with_reentry: "yes",
+               anyone_tribe: "yes",
+               anyone_stopped_work: "yes",
+               has_quest_card: "yes"),
       ).attributes
 
       fields = PdfForms::PdftkWrapper.new.get_fields("app/lib/pdfs/FA1.pdf")
@@ -46,6 +49,9 @@ describe Fa1InterviewPdfDecorator do
         served_parole
         mandatory_drug_treatment
         action_towards_rehabilitation
+        tribal_member
+        any_hhm_work_stopped
+        alaska_quest_card
       ]
       checkbox_fields.each do |checkbox_field|
         valid_options = fields.detect { |field| field.name == checkbox_field.to_s }.options
@@ -79,7 +85,12 @@ describe Fa1InterviewPdfDecorator do
                          complied_with_reentry: "unfilled",
                          arrival_in_alaska: "",
                          intend_to_stay: "yes",
-                         expenses_payment_details: "explanation")
+                         expenses_payment_details: "explanation",
+                         anyone_tribe: "yes",
+                         tribe_details: "more tribe details",
+                         anyone_stopped_work: "yes",
+                         stopped_work_details: "stopped work name",
+                         has_quest_card: "yes")
 
       attributes = Fa1InterviewPdfDecorator.new(interview).attributes
 
@@ -108,6 +119,11 @@ describe Fa1InterviewPdfDecorator do
       expect(attributes[:when_alaska_arrival]).to eq ""
       expect(attributes[:stay_in_alaska]).to eq "yes"
       expect(attributes[:explain_expenses_payment]).to eq "explanation"
+      expect(attributes[:tribal_member]).to eq "yes"
+      expect(attributes[:any_hhm_work_stopped]).to eq "yes"
+      expect(attributes[:tribal_member_name]).to eq "more tribe details"
+      expect(attributes[:hhm_work_stopped_name_and_reason]).to eq "stopped work name"
+      expect(attributes[:alaska_quest_card]).to eq "yes"
     end
 
     it "fills in both explained and provided for rights and responsibilities" do

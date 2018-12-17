@@ -28,6 +28,11 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
       when_alaska_arrival: arrival_in_alaska,
       stay_in_alaska: intend_to_stay,
       explain_expenses_payment: expenses_payment_details,
+      tribal_member: yes_no_enum(anyone_tribe),
+      tribal_member_name: tribe_details,
+      any_hhm_work_stopped: yes_no_enum(anyone_stopped_work),
+      hhm_work_stopped_name_and_reason: stopped_work_details,
+      alaska_quest_card: yes_no_enum(has_quest_card),
     }
   end
 
