@@ -89,6 +89,11 @@ RSpec.feature "Interview for new application", :js do
     fill_in "form[filing_tax_return_details]", with: "Lauryn Hill and D'Angelo"
     click_on "Continue"
 
+    expect(page).to have_content "What living expenses does the household pay for?"
+    check "Rent/mortgage"
+    check "Electricity"
+    click_on "Continue"
+
     expect(page).to have_content "Explain how the household has been supporting itself before applying for assistance."
     fill_in "If the applicant claimed \"no income,\" explain how the expenses have been paid",
             with: "I'm crashing on my friend's couch right now so I don't pay rent"

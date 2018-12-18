@@ -48,6 +48,13 @@ class Form
       value ? "1" : "0"
     end
 
+    def attributes_to_checkbox_values(interview)
+      attribute_names.reduce({}) do |attributes, attribute_name|
+        attributes[attribute_name] = checkbox_value(interview.public_send(attribute_name))
+        attributes
+      end
+    end
+
     # Override in subclasses if needed
 
     def existing_attributes(interview)
