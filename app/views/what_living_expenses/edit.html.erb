@@ -1,0 +1,62 @@
+<% content_for :card_title, "What living expenses does the household pay for?" %>
+
+<% content_for :card_help, "Select all that apply." %>
+
+<% content_for :card_body do %>
+  <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
+    <%= f.cfa_checkbox_set_with_none([
+                                       {
+                                         label: "Rent/mortgage",
+                                         method: :has_rent_mortgage_expense,
+                                       },
+                                       {
+                                         label: "Space rent",
+                                         method: :has_space_rent_expense,
+                                       },
+                                       {
+                                         label: "Property tax",
+                                         method: :has_property_tax_expense,
+                                       },
+                                       {
+                                         label: "Child support",
+                                         method: :has_child_support_expense,
+                                       },
+                                       {
+                                         label: "Home insurance",
+                                         method: :has_home_insurance_expense,
+                                       },
+                                       {
+                                         label: "Child Care",
+                                         method: :has_child_care_expense,
+                                       },
+                                       {
+                                         label: "Medical care/medicine",
+                                         method: :has_medical_care_medicine_expense,
+                                       },
+                                       {
+                                         label: "Wood/coal",
+                                         method: :has_wood_coal_expense,
+                                       },
+                                       {
+                                         label: "Telephone",
+                                         method: :has_telephone_expense,
+                                       },
+                                       {
+                                         label: "Water/sewage",
+                                         method: :has_water_sewage_expense,
+                                       },
+                                       {
+                                         label: "Electricity",
+                                         method: :has_electricity_expense,
+                                       },
+                                       {
+                                         label: "Propane/gas",
+                                         method: :has_propane_gas_expense,
+                                       },
+                                       {
+                                         label: "Oil",
+                                         method: :has_oil_expense,
+                                       },
+                                     ]) %>
+  <% end %>
+<% end %>

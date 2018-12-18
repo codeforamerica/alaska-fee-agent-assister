@@ -21,6 +21,7 @@ class FormNavigation
     QuestCardController,
     AnyoneFilingTaxReturnController,
     FilingTaxReturnDetailsController,
+    WhatLivingExpensesController,
     ExpensesPaymentDetailsController,
     CamaDetailsController,
     OtherInformationController,

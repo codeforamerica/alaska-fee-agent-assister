@@ -40,6 +40,19 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
       client_sign_and_date: yes_no_value(client_sign_and_date),
       fa_sign_and_date: yes_no_value(fa_sign_and_date),
       all_hhm_ssn_listed: yes_no_value(all_ssns_included),
+      rent_mortgage: checkbox_value(has_rent_mortgage_expense),
+      space_rent: checkbox_value(has_space_rent_expense),
+      property_tax: checkbox_value(has_property_tax_expense),
+      child_support: checkbox_value(has_child_support_expense),
+      home_insurance: checkbox_value(has_home_insurance_expense),
+      child_care: checkbox_value(has_child_care_expense),
+      medical_care_medicine: checkbox_value(has_medical_care_medicine_expense),
+      wood_coal: checkbox_value(has_wood_coal_expense),
+      telephone: checkbox_value(has_telephone_expense),
+      water_sewer: checkbox_value(has_water_sewage_expense),
+      electricity: checkbox_value(has_electricity_expense),
+      propane_gas: checkbox_value(has_propane_gas_expense),
+      oil: checkbox_value(has_oil_expense),
     }
   end
 

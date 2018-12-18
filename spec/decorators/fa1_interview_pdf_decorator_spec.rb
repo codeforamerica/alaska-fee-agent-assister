@@ -21,6 +21,19 @@ describe Fa1InterviewPdfDecorator do
           selected_cama: false,
           explained_rights: true,
           any_not_listed: "yes",
+          has_rent_mortgage_expense: true,
+          has_space_rent_expense: true,
+          has_property_tax_expense: false,
+          has_child_support_expense: false,
+          has_home_insurance_expense: false,
+          has_child_care_expense: false,
+          has_medical_care_medicine_expense: false,
+          has_wood_coal_expense: false,
+          has_telephone_expense: false,
+          has_water_sewage_expense: false,
+          has_electricity_expense: false,
+          has_propane_gas_expense: false,
+          has_oil_expense: false,
           any_away_from_home: "no",
           anyone_convicted_drug_felony: "yes",
           completed_probation_or_parole: "yes",
@@ -60,6 +73,19 @@ describe Fa1InterviewPdfDecorator do
         client_sign_and_date
         fa_sign_and_date
         all_hhm_ssn_listed
+        rent_mortgage
+        space_rent
+        property_tax
+        child_support
+        home_insurance
+        child_care
+        medical_care_medicine
+        wood_coal
+        telephone
+        water_sewer
+        electricity
+        propane_gas
+        oil
       ]
       checkbox_fields.each do |checkbox_field|
         valid_options = fields.detect { |field| field.name == checkbox_field.to_s }.options
@@ -81,6 +107,19 @@ describe Fa1InterviewPdfDecorator do
         selected_atap: false,
         selected_apa: false,
         selected_cama: false,
+        has_rent_mortgage_expense: true,
+        has_space_rent_expense: true,
+        has_property_tax_expense: false,
+        has_child_support_expense: false,
+        has_home_insurance_expense: false,
+        has_child_care_expense: false,
+        has_medical_care_medicine_expense: false,
+        has_wood_coal_expense: false,
+        has_telephone_expense: false,
+        has_water_sewage_expense: false,
+        has_electricity_expense: false,
+        has_propane_gas_expense: false,
+        has_oil_expense: false,
         any_not_listed: "yes",
         any_not_listed_names: "Sophie",
         any_away_from_home: "yes",
@@ -146,6 +185,19 @@ describe Fa1InterviewPdfDecorator do
       expect(attributes[:client_sign_and_date]).to eq "yes"
       expect(attributes[:fa_sign_and_date]).to eq "yes"
       expect(attributes[:all_hhm_ssn_listed]).to eq "yes"
+      expect(attributes[:rent_mortgage]).to eq "On"
+      expect(attributes[:space_rent]).to eq "On"
+      expect(attributes[:property_tax]).to eq "Off"
+      expect(attributes[:child_support]).to eq "Off"
+      expect(attributes[:home_insurance]).to eq "Off"
+      expect(attributes[:child_care]).to eq "Off"
+      expect(attributes[:medical_care_medicine]).to eq "Off"
+      expect(attributes[:wood_coal]).to eq "Off"
+      expect(attributes[:telephone]).to eq "Off"
+      expect(attributes[:water_sewer]).to eq "Off"
+      expect(attributes[:electricity]).to eq "Off"
+      expect(attributes[:propane_gas]).to eq "Off"
+      expect(attributes[:oil]).to eq "Off"
     end
 
     it "fills in both explained and provided for rights and responsibilities" do

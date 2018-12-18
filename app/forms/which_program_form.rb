@@ -9,10 +9,7 @@ class WhichProgramForm < Form
   end
 
   def self.existing_attributes(interview)
-    attribute_names.reduce({}) do |attributes, program|
-      attributes[program] = checkbox_value(interview.public_send(program))
-      attributes
-    end
+    attributes_to_checkbox_values(interview)
   end
 
   private
