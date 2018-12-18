@@ -25,8 +25,8 @@
 
 .illustration--important {
   background-image: image-url('important.png');
-  width: 25px;
-  height: 50px;
+  height: 34px;
+  width: 10px;
 }
 
 ul.highlighted {
@@ -40,20 +40,14 @@ ul.highlighted {
   padding: 0 0.7em;
 }
 
-.notice--important {
+.notice--with-illustration {
   background-color: #E3F6F2;
-}
-
-.notice--important .illustration-holder {
-  background-color: #00A287;
-}
-
-.notice.with-illustration {
   position: relative;
   padding: 0;
 }
 
-.notice.with-illustration .illustration-holder {
+.notice__illustration-holder {
+  background-color: #00A287;
   position:absolute;
   left: 0;
   height: 100%;
@@ -61,15 +55,14 @@ ul.highlighted {
   margin-right: 25px;
 }
 
-.notice.with-illustration .illustration-holder i {
+.notice__illustration {
   position: absolute;
   top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  margin-left: 13px;
+  -ms-transform: translateY(-50%) translateX(200%);
+  transform: translateY(-50%) translateX(200%);
 }
 
-.notice.with-illustration .notice-content {
+.notice__content {
   position: relative;
   left: 50px;
   width: 90%;
