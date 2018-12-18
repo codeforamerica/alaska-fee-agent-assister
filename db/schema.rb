@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 2018_12_14_234524) do
     t.integer "has_quest_card", default: 0
     t.integer "anyone_filing_tax_return", default: 0
     t.text "filing_tax_return_details"
-    t.string "expenses_payment_details"
     t.text "cama_details"
+    t.string "expenses_payment_details"
     t.text "other_info"
     t.boolean "client_sign_and_date"
     t.boolean "fa_sign_and_date"
