@@ -13,24 +13,27 @@ describe Fa1InterviewPdfDecorator do
     it "includes valid values for checkboxes" do
       attributes = Fa1InterviewPdfDecorator.new(
         create(:interview,
-               selected_snap: true,
-               selected_medicaid: true,
-               selected_general_relief: true,
-               selected_atap: false,
-               selected_apa: false,
-               selected_cama: false,
-               explained_rights: true,
-               any_not_listed: "yes",
-               any_away_from_home: "no",
-               anyone_convicted_drug_felony: "yes",
-               completed_probation_or_parole: "yes",
-               completed_treatment_program: "yes",
-               taken_action_towards_rehabilitation: "yes",
-               complied_with_reentry: "yes",
-               anyone_tribe: "yes",
-               anyone_stopped_work: "yes",
-               has_quest_card: "yes",
-               anyone_filing_tax_return: "yes"),
+          selected_snap: true,
+          selected_medicaid: true,
+          selected_general_relief: true,
+          selected_atap: false,
+          selected_apa: false,
+          selected_cama: false,
+          explained_rights: true,
+          any_not_listed: "yes",
+          any_away_from_home: "no",
+          anyone_convicted_drug_felony: "yes",
+          completed_probation_or_parole: "yes",
+          completed_treatment_program: "yes",
+          taken_action_towards_rehabilitation: "yes",
+          complied_with_reentry: "yes",
+          anyone_tribe: "yes",
+          anyone_stopped_work: "yes",
+          has_quest_card: "yes",
+          anyone_filing_tax_return: "yes",
+          client_sign_and_date: true,
+          fa_sign_and_date: true,
+          all_ssns_included: true),
       ).attributes
 
       fields = PdfForms::PdftkWrapper.new.get_fields("app/lib/pdfs/FA1.pdf")
@@ -54,6 +57,9 @@ describe Fa1InterviewPdfDecorator do
         any_hhm_work_stopped
         alaska_quest_card
         filing_federal_tax_return
+        client_sign_and_date
+        fa_sign_and_date
+        all_hhm_ssn_listed
       ]
       checkbox_fields.each do |checkbox_field|
         valid_options = fields.detect { |field| field.name == checkbox_field.to_s }.options
@@ -63,40 +69,43 @@ describe Fa1InterviewPdfDecorator do
 
     it "returns the hash of keys and values for the fillable FA1 pdf" do
       interview = create(:interview,
-                         fee_agent_name: "Jane FA",
-                         client_name: "Jessie Tester",
-                         fee_agent_email: "jane_fa@example.com",
-                         fee_agent_phone_number: "1234567890",
-                         client_last_four_ssn: "1234",
-                         attendee_names: "Jessie Tester and Jamie Tester",
-                         selected_snap: true,
-                         selected_medicaid: true,
-                         selected_general_relief: true,
-                         selected_atap: false,
-                         selected_apa: false,
-                         selected_cama: false,
-                         any_not_listed: "yes",
-                         any_not_listed_names: "Sophie",
-                         any_away_from_home: "yes",
-                         any_away_from_home_names: "Frank",
-                         anyone_convicted_drug_felony: "yes",
-                         convicted_drug_felony_name: "Anne Dog",
-                         completed_probation_or_parole: "no",
-                         completed_treatment_program: "no",
-                         taken_action_towards_rehabilitation: "no",
-                         complied_with_reentry: "unfilled",
-                         arrival_in_alaska: "",
-                         intend_to_stay: "yes",
-                         expenses_payment_details: "explanation",
-                         anyone_tribe: "yes",
-                         tribe_details: "more tribe details",
-                         anyone_stopped_work: "yes",
-                         stopped_work_details: "stopped work name",
-                         has_quest_card: "yes",
-                         anyone_filing_tax_return: "yes",
-                         filing_tax_return_details: "tax return details",
-                         cama_details: "cama details",
-                         other_info: "other info")
+        fee_agent_name: "Jane FA",
+        client_name: "Jessie Tester",
+        fee_agent_email: "jane_fa@example.com",
+        fee_agent_phone_number: "1234567890",
+        client_last_four_ssn: "1234",
+        attendee_names: "Jessie Tester and Jamie Tester",
+        selected_snap: true,
+        selected_medicaid: true,
+        selected_general_relief: true,
+        selected_atap: false,
+        selected_apa: false,
+        selected_cama: false,
+        any_not_listed: "yes",
+        any_not_listed_names: "Sophie",
+        any_away_from_home: "yes",
+        any_away_from_home_names: "Frank",
+        anyone_convicted_drug_felony: "yes",
+        convicted_drug_felony_name: "Anne Dog",
+        completed_probation_or_parole: "no",
+        completed_treatment_program: "no",
+        taken_action_towards_rehabilitation: "no",
+        complied_with_reentry: "unfilled",
+        arrival_in_alaska: "",
+        intend_to_stay: "yes",
+        expenses_payment_details: "explanation",
+        anyone_tribe: "yes",
+        tribe_details: "more tribe details",
+        anyone_stopped_work: "yes",
+        stopped_work_details: "stopped work name",
+        has_quest_card: "yes",
+        anyone_filing_tax_return: "yes",
+        filing_tax_return_details: "tax return details",
+        cama_details: "cama details",
+        other_info: "other info",
+        client_sign_and_date: true,
+        fa_sign_and_date: true,
+        all_ssns_included: true)
 
       attributes = Fa1InterviewPdfDecorator.new(interview).attributes
 
@@ -134,6 +143,9 @@ describe Fa1InterviewPdfDecorator do
       expect(attributes[:who_is_filing_and_dependents]).to eq "tax return details"
       expect(attributes[:cama_medical_need]).to eq "cama details"
       expect(attributes[:other_information]).to eq "other info"
+      expect(attributes[:client_sign_and_date]).to eq "yes"
+      expect(attributes[:fa_sign_and_date]).to eq "yes"
+      expect(attributes[:all_hhm_ssn_listed]).to eq "yes"
     end
 
     it "fills in both explained and provided for rights and responsibilities" do

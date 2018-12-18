@@ -37,6 +37,9 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
       who_is_filing_and_dependents: filing_tax_return_details,
       cama_medical_need: cama_details,
       other_information: other_info,
+      client_sign_and_date: yes_no_value(client_sign_and_date),
+      fa_sign_and_date: yes_no_value(fa_sign_and_date),
+      all_hhm_ssn_listed: yes_no_value(all_ssns_included),
     }
   end
 
