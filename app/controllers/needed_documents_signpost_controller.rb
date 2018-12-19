@@ -1,4 +1,4 @@
-class ImportantDetailsController < FormsController
+class NeededDocumentsSignpostController < FormsController
   layout "signpost"
 
   def form_class
