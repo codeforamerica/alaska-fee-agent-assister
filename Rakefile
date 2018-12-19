@@ -17,3 +17,5 @@ end
 task default: %w[lint:autocorrect bundler:audit brakeman spec]
 
 Rails.application.load_tasks
+
+task "db:schema:dump": "db:schema:alphabetize_columns"
