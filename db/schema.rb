@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_17_184940) do
+ActiveRecord::Schema.define(version: 2018_12_19_224028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,11 +49,14 @@ ActiveRecord::Schema.define(version: 2018_12_17_184940) do
     t.integer "anyone_stopped_work", default: 0
     t.text "stopped_work_details"
     t.integer "has_quest_card", default: 0
+    t.integer "anyone_filing_tax_return", default: 0
+    t.text "filing_tax_return_details"
+    t.text "cama_details"
     t.string "expenses_payment_details"
+    t.text "other_info"
     t.boolean "client_sign_and_date"
     t.boolean "fa_sign_and_date"
     t.boolean "all_ssns_included"
-    t.text "cama_details"
     t.boolean "has_rent_mortgage_expense", default: false
     t.boolean "has_space_rent_expense", default: false
     t.boolean "has_property_tax_expense", default: false
@@ -67,9 +70,6 @@ ActiveRecord::Schema.define(version: 2018_12_17_184940) do
     t.boolean "has_electricity_expense", default: false
     t.boolean "has_propane_gas_expense", default: false
     t.boolean "has_oil_expense", default: false
-    t.integer "anyone_filing_tax_return", default: 0
-    t.text "filing_tax_return_details"
-    t.text "other_info"
   end
 
   create_table "navigators", force: :cascade do |t|
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2018_12_17_184940) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "lived_outside_alaska", default: 0
+    t.integer "citizen", default: 0
     t.index ["interview_id"], name: "index_navigators_on_interview_id"
   end
 

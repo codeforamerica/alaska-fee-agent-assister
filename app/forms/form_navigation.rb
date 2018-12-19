@@ -28,6 +28,7 @@ class FormNavigation
     ImportantConfirmationsController,
     ImportantDetailsController,
     NeededDocumentsSignpostController,
+    CitizenController,
     AttachDocumentsSignpostController,
   ].freeze
 
