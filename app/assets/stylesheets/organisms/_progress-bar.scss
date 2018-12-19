@@ -21,8 +21,12 @@
     &.incomplete {
       fill: #EAEAE9;
     }
+    &.completed {
+      fill: #01846F;// when we put this in the styleguide: $color-teal;
+    }
   }
 }
+
 .completed-check-mark {
   stroke-width: 2px;
   stroke: #deded1;

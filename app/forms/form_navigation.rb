@@ -27,6 +27,8 @@ class FormNavigation
     OtherInformationController,
     ImportantConfirmationsController,
     ImportantDetailsController,
+    NeededDocumentsSignpostController,
+    AttachDocumentsSignpostController,
   ].freeze
 
   class << self
