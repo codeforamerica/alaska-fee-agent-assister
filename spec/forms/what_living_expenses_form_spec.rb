@@ -1,6 +1,57 @@
 require "rails_helper"
 
 RSpec.describe WhatLivingExpensesForm do
+  describe "validations" do
+    context "when at least one expense (or none of the above) is true" do
+      it "is valid" do
+        form = WhatLivingExpensesForm.new(
+          nil,
+          has_rent_mortgage_expense: "1",
+          has_space_rent_expense: "1",
+          has_property_tax_expense: "0",
+          has_child_support_expense: "0",
+          has_home_insurance_expense: "0",
+          has_child_care_expense: "0",
+          has_medical_care_medicine_expense: "0",
+          has_wood_coal_expense: "0",
+          has_telephone_expense: "0",
+          has_water_sewage_expense: "0",
+          has_electricity_expense: "0",
+          has_propane_gas_expense: "0",
+          has_oil_expense: "0",
+          none: "0",
+        )
+
+        expect(form).to be_valid
+      end
+    end
+
+    context "when all expenses (and none of the above) are false" do
+      it "is invalid" do
+        form = WhatLivingExpensesForm.new(
+          nil,
+          has_rent_mortgage_expense: "0",
+          has_space_rent_expense: "0",
+          has_property_tax_expense: "0",
+          has_child_support_expense: "0",
+          has_home_insurance_expense: "0",
+          has_child_care_expense: "0",
+          has_medical_care_medicine_expense: "0",
+          has_wood_coal_expense: "0",
+          has_telephone_expense: "0",
+          has_water_sewage_expense: "0",
+          has_electricity_expense: "0",
+          has_propane_gas_expense: "0",
+          has_oil_expense: "0",
+          none: "0",
+        )
+
+        expect(form).not_to be_valid
+        expect(form.errors[:living_expenses]).to be_present
+      end
+    end
+  end
+
   describe "#save" do
     let(:interview) { create :interview }
 

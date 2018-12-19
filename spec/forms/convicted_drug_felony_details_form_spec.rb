@@ -2,34 +2,53 @@ require "rails_helper"
 
 RSpec.describe ConvictedDrugFelonyDetailsForm do
   describe "validations" do
-    context "when name is provided" do
+    context "when name is provided and at least one checkbox is checked" do
       it "is valid" do
         form = ConvictedDrugFelonyDetailsForm.new(
           nil,
           convicted_drug_felony_name: "Anne Doe",
-          completed_probation_or_parole: "",
-          completed_treatment_program: "",
-          taken_action_towards_rehabilitation: "",
-          complied_with_reentry: "",
+          completed_probation_or_parole: "1",
+          completed_treatment_program: "0",
+          taken_action_towards_rehabilitation: "0",
+          complied_with_reentry: "0",
+          none: "0",
         )
 
         expect(form).to be_valid
       end
     end
 
-    context "when convicted_drug_felony_name is not provided" do
+    context "when convicted_drug_felony_name is not provided but a checkbox is checked" do
       it "is invalid" do
         form = ConvictedDrugFelonyDetailsForm.new(
           nil,
           convicted_drug_felony_name: "",
-          completed_probation_or_parole: "",
-          completed_treatment_program: "",
-          taken_action_towards_rehabilitation: "",
-          complied_with_reentry: "",
+          completed_probation_or_parole: "1",
+          completed_treatment_program: "0",
+          taken_action_towards_rehabilitation: "0",
+          complied_with_reentry: "0",
+          none: "0",
         )
 
         expect(form).not_to be_valid
         expect(form.errors[:convicted_drug_felony_name]).to be_present
+      end
+    end
+
+    context "when convicted_drug_felony_name is provided but a checkbox is not checked" do
+      it "is invalid" do
+        form = ConvictedDrugFelonyDetailsForm.new(
+          nil,
+          convicted_drug_felony_name: "Anne Doe",
+          completed_probation_or_parole: "0",
+          completed_treatment_program: "0",
+          taken_action_towards_rehabilitation: "0",
+          complied_with_reentry: "0",
+          none: "0",
+        )
+
+        expect(form).not_to be_valid
+        expect(form.errors[:convicted_drug_felony_details]).to be_present
       end
     end
   end
@@ -42,8 +61,9 @@ RSpec.describe ConvictedDrugFelonyDetailsForm do
         convicted_drug_felony_name: "Anne Doe",
         completed_probation_or_parole: "1",
         completed_treatment_program: "1",
-        taken_action_towards_rehabilitation: "",
-        complied_with_reentry: "",
+        taken_action_towards_rehabilitation: "0",
+        complied_with_reentry: "0",
+        none: "0",
       }
     end
 

@@ -15,14 +15,7 @@ class WhichProgramForm < Form
   private
 
   def at_least_one_program_selected
-    return true if [
-      selected_snap,
-      selected_medicaid,
-      selected_general_relief,
-      selected_atap,
-      selected_apa,
-      selected_cama,
-    ].any? { |program| program == "1" }
+    return true if attributes_for(:interview).values.any? { |program| program == "1" }
 
     errors.add(:program_type, "Make sure to select at least one program.")
   end
