@@ -27,12 +27,12 @@
             <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
               <%= f.cfa_single_tap_button(yes_no_method_name,
                                           '<i class="button__icon--left emoji emoji--inline emoji--checkmark"></i>Yes',
-                                          try(:yes_value) ? yes_value : "yes",
+                                          yes_value,
                                           classes: []) %>
 
               <%= f.cfa_single_tap_button(yes_no_method_name,
                                           '<i class="button__icon--left emoji emoji--inline emoji--crossmark"></i>No',
-                                          try(:no_value) ? yes_value : "no",
+                                          no_value,
                                           classes: []) %>
             <% end %>
           <% end %>

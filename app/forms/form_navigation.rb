@@ -29,6 +29,7 @@ class FormNavigation
     ImportantDetailsController,
     NeededDocumentsSignpostController,
     CitizenController,
+    ChildrenInHomeController,
     AttachDocumentsSignpostController,
   ].freeze
 
