@@ -4,7 +4,8 @@
 
 <% content_for :card_body do %>
   <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
-    <%= f.cfa_checkbox_set_with_none([
+    <%= f.cfa_checkbox_set_with_none(:living_expenses,
+                                     [
                                        {
                                          label: "Rent/mortgage",
                                          method: :has_rent_mortgage_expense,
@@ -42,7 +43,7 @@
                                          method: :has_telephone_expense,
                                        },
                                        {
-                                         label: "Water/sewage",
+                                         label: "Water/sewer",
                                          method: :has_water_sewage_expense,
                                        },
                                        {

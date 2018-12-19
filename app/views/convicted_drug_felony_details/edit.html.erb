@@ -3,7 +3,7 @@
 <% content_for :card_body do %>
   <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
     <%= f.cfa_input_field :convicted_drug_felony_name, "What is the person's name?" %>
-    <%= f.cfa_checkbox_set_with_none([
+    <%= f.cfa_checkbox_set_with_none(:convicted_drug_felony_details, [
        {
            label: "Successfully completed or satisfactorily served a period of probation or parole",
            method: :completed_probation_or_parole,

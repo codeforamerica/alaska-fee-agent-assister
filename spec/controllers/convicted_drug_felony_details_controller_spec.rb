@@ -4,6 +4,7 @@ RSpec.describe ConvictedDrugFelonyDetailsController do
   it_behaves_like "form controller base behavior"
   it_behaves_like "form controller successful update", {
     convicted_drug_felony_name: "Anne Dog",
+    completed_probation_or_parole: "1",
   }
   it_behaves_like "form controller unsuccessful update"
 
