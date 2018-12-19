@@ -119,6 +119,9 @@ RSpec.feature "Interview for new application", :js do
     expect(page).to have_content "Great! Now let's go through a few questions to see what other documents are needed."
     click_on "Continue"
 
+    expect(page).to have_content "Is everyone on the application a US citizen?"
+    click_on "Yes"
+
     expect(page).to have_content "Lastly, let's attach the application and any required documents."
     click_on "Continue"
   end
