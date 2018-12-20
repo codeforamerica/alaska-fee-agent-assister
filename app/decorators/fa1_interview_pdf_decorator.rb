@@ -4,6 +4,7 @@ class Fa1InterviewPdfDecorator < SimpleDelegator
       fa_name: fee_agent_name,
       fa_email: fee_agent_email,
       fa_number: fee_agent_phone_number,
+      interview_date: created_at.strftime("%m/%d/%Y"),
       applicant_name: client_name,
       applicant_last_four_ssn: client_last_four_ssn,
       interview_attendees: attendee_names,
