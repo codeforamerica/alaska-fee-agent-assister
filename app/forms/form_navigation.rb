@@ -33,6 +33,7 @@ class FormNavigation
     ParentNotInHomeController,
     PregnantController,
     AttachDocumentsSignpostController,
+    HowToTakePhotosController,
   ].freeze
 
   class << self

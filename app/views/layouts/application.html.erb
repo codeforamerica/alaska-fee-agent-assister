@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <% if content_for? :card_title %>
-    <title><%= content_for :card_title %> | Fee Agents Assister for Alaska</title>
+    <title><%= strip_tags(content_for(:card_title)) %> | Fee Agents Assister for Alaska</title>
   <% else %>
     <title>Fee Agents Assister for Alaska</title>
   <% end %>
