@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2018_12_20_005252) do
 
   create_table "navigators", force: :cascade do |t|
     t.boolean "children_in_home", default: false
-    t.integer "citizen", default: 0
+    t.boolean "citizen", default: false
     t.datetime "created_at", null: false
     t.bigint "interview_id"
     t.integer "interview_type", default: 0

@@ -1,8 +1,6 @@
 class CitizenForm < Form
   set_attributes_for :navigator, :citizen
 
-  validates_inclusion_of :citizen, { in: %w{yes no}, message: "Make sure to choose an option." }
-
   def save
     interview.navigator.update(attributes_for(:navigator))
   end

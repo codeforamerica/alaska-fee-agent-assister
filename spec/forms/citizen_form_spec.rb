@@ -1,37 +1,12 @@
 require "rails_helper"
 
 RSpec.describe CitizenForm do
-  describe "validations" do
-    context "when citizen is provided" do
-      it "is valid" do
-        form = CitizenForm.new(
-          nil,
-          citizen: "yes",
-        )
-
-        expect(form).to be_valid
-      end
-    end
-
-    context "when citizen is not provided" do
-      it "is invalid" do
-        form = CitizenForm.new(
-          nil,
-          citizen: nil,
-        )
-
-        expect(form).not_to be_valid
-        expect(form.errors[:citizen]).to be_present
-      end
-    end
-  end
-
   describe "#save" do
     let(:interview) { create :interview, :with_navigator }
 
     let(:valid_params) do
       {
-        citizen: "yes",
+        citizen: "true",
       }
     end
 
@@ -42,17 +17,17 @@ RSpec.describe CitizenForm do
 
       interview.reload
 
-      expect(interview.navigator.citizen).to eq "yes"
+      expect(interview.navigator.citizen).to eq true
     end
   end
 
   describe ".from_interview" do
     it "assigns values from interview" do
-      interview = create(:interview, navigator: build(:navigator, citizen: "yes"))
+      interview = create(:interview, navigator: build(:navigator, citizen: true))
 
       form = CitizenForm.from_interview(interview)
 
-      expect(form.citizen).to eq "yes"
+      expect(form.citizen).to eq true
     end
   end
 end
