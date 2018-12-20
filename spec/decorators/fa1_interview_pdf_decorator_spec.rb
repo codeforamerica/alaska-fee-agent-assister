@@ -99,6 +99,7 @@ describe Fa1InterviewPdfDecorator do
         client_name: "Jessie Tester",
         fee_agent_email: "jane_fa@example.com",
         fee_agent_phone_number: "1234567890",
+        created_at: "01/01/2000",
         client_last_four_ssn: "1234",
         attendee_names: "Jessie Tester and Jamie Tester",
         selected_snap: true,
@@ -151,6 +152,7 @@ describe Fa1InterviewPdfDecorator do
       expect(attributes[:fa_name]).to eq "Jane FA"
       expect(attributes[:fa_email]).to eq "jane_fa@example.com"
       expect(attributes[:fa_number]).to eq "123-456-7890"
+      expect(attributes[:interview_date]).to eq "01/01/2000"
       expect(attributes[:applicant_name]).to eq "Jessie Tester"
       expect(attributes[:applicant_last_four_ssn]).to eq "1234"
       expect(attributes[:interview_attendees]).to eq "Jessie Tester and Jamie Tester"
