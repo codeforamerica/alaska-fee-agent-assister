@@ -30,6 +30,7 @@ class FormNavigation
     NeededDocumentsSignpostController,
     CitizenController,
     ChildrenInHomeController,
+    PregnantController,
     AttachDocumentsSignpostController,
   ].freeze
 
