@@ -1,4 +1,4 @@
-<% content_for :card_title, "Let's review a few important parts of the application." %>
+<% content_for :card_title, "Let's review a few important parts of the #{application_or_renewal}." %>
 
 <% content_for :card_body do %>
   <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
