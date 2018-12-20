@@ -115,6 +115,8 @@ RSpec.feature "Interview for new application", :js do
     click_on "Continue"
 
     expect(page).to have_content "Let's review some of the important details"
+    expect(page).to have_content "Anne M. FeeAgent"
+    expect(page).to have_content "Jane McClient"
     click_on "Continue"
 
     expect(page).to have_content "Great! Now let's go through a few questions to see what other documents are needed."
