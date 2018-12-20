@@ -15,12 +15,12 @@
     </div>
     <div class="vertical-steps__step">
       <h3>This <%= application_or_renewal %> is for</h3>
-      <%= raw "SNAP<br>" if current_interview.selected_snap %>
-      <%= raw "Medicaid<br>" if current_interview.selected_medicaid %>
-      <%= raw "General Relief<br>" if current_interview.selected_general_relief %>
-      <%= raw "Alaska Temporary Assistance<br>" if current_interview.selected_atap %>
-      <%= raw "Adult Public Assistance<br>" if current_interview.selected_apa %>
-      <%= raw "CAMA" if current_interview.selected_cama %>
+      <%= "SNAP<br>".html_safe if current_interview.selected_snap %>
+      <%= "Medicaid<br>".html_safe if current_interview.selected_medicaid %>
+      <%= "General Relief<br>".html_safe if current_interview.selected_general_relief %>
+      <%= "Alaska Temporary Assistance<br>".html_safe if current_interview.selected_atap %>
+      <%= "Adult Public Assistance<br>".html_safe if current_interview.selected_apa %>
+      <%= "CAMA" if current_interview.selected_cama %>
     </div>
   </div>
 <% end %>
