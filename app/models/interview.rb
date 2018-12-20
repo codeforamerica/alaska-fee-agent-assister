@@ -17,5 +17,6 @@ class Interview < ApplicationRecord
   enum has_quest_card: { unfilled: 0, yes: 1, no: 2 }, _prefix: :has_quest_card
   enum anyone_filing_tax_return: { unfilled: 0, yes: 1, no: 2 }, _prefix: :anyone_filing_tax_return
   # Generated enums added above
+  enum approved_for_disability: { unfilled: 0, yes: 1, no: 2 }, _prefix: :approved_for_disability
   enum intend_to_stay: { unfilled: 0, yes: 1, no: 2 }, _prefix: :intend_to_stay
 end
