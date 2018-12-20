@@ -99,7 +99,7 @@ describe Fa1InterviewPdfDecorator do
         client_name: "Jessie Tester",
         fee_agent_email: "jane_fa@example.com",
         fee_agent_phone_number: "1234567890",
-        created_at: "01/01/2000",
+        created_at: "01/01/2000 15:00:00",
         client_last_four_ssn: "1234",
         attendee_names: "Jessie Tester and Jamie Tester",
         selected_snap: true,
