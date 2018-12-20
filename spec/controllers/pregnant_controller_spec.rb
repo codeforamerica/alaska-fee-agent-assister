@@ -5,6 +5,7 @@ RSpec.describe PregnantController do
   it_behaves_like "form controller successful update", {
     pregnant: true,
   }
+  it_behaves_like "yes no forms controller with boolean values"
 
   describe "#show?" do
     context "when applicant is applying for Alaska Temporary Assistance" do

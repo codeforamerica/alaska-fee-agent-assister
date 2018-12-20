@@ -6,7 +6,7 @@ RSpec.describe PregnantForm do
 
     let(:valid_params) do
       {
-        pregnant: true,
+        pregnant: "true",
       }
     end
 
