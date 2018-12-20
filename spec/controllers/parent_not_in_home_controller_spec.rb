@@ -5,6 +5,7 @@ RSpec.describe ParentNotInHomeController do
   it_behaves_like "form controller successful update", {
     parent_not_in_home: "true",
   }
+  it_behaves_like "yes no forms controller with boolean values"
 
   describe "#show?" do
     context "when children in home" do
@@ -29,18 +30,6 @@ RSpec.describe ParentNotInHomeController do
         show = ParentNotInHomeController.show?(application)
         expect(show).to eq(false)
       end
-    end
-  end
-
-  describe "yes_value" do
-    it "returns 'true'" do
-      expect(controller.yes_value).to eq(true)
-    end
-  end
-
-  describe "no_value" do
-    it "returns 'false'" do
-      expect(controller.no_value).to eq(false)
     end
   end
 end
