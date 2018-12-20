@@ -137,7 +137,7 @@ RSpec.feature "Interview for new application", :js do
     expect(page).to have_content "Lastly, let's attach the application and any required documents."
     click_on "Continue"
 
-    expect(page).to have_content "Taking photos of documents."
+    expect(page).to have_content "Take a moment to scan in any documents that are required."
     click_on "Continue"
   end
 end
