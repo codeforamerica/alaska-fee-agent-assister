@@ -1,10 +1,6 @@
 class ParentNotInHomeController < YesNoFormsController
   def self.show_rule_sets(interview)
-    [
-      interview.navigator.interview_type_application?,
-      (interview.selected_medicaid || interview.selected_atap),
-      interview.navigator.children_in_home?,
-    ] + super
+    super << interview.navigator.children_in_home?
   end
 
   def yes_no_method_name
