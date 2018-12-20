@@ -3,7 +3,7 @@
 <% content_for :card_body do %>
   <%= fields_for(:form, @form, builder: Cfa::Styleguide::CfaFormBuilder) do |f| %>
     <%= f.cfa_textarea :stopped_work_details,
-      "<p>List the person, the job, when and why the job ended or was reduced, and the name and phone number of the employer</p>
+      "<p>List the person, the job, when and why the job ended or was reduced, and the name and phone number of the employer.</p>
 
       <div class='notice notice--with-illustration'>
         <div class='notice__illustration-holder'>
