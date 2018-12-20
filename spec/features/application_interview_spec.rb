@@ -128,6 +128,9 @@ RSpec.feature "Interview for new application", :js do
     expect(page).to have_content "Are there any children who live in the home?"
     click_on "Yes"
 
+    expect(page).to have_content "Are there any parents who do not live in the home?"
+    click_on "Yes"
+
     expect(page).to have_content "Is the application for someone who is currently pregnant?"
     click_on "Yes"
 
