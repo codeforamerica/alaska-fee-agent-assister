@@ -7,68 +7,24 @@ RSpec.describe ParentNotInHomeController do
   }
 
   describe "#show?" do
-    context "when application" do
-      context "when children in home" do
-        context "when applying for medicaid" do
-          it "returns true" do
-            application = create(:interview,
-              selected_medicaid: true,
-              navigator: build(:navigator,
-                interview_type: "application",
-                children_in_home: true))
+    context "when children in home" do
+      it "returns true" do
+        application = create(:interview,
+          navigator: build(:navigator,
+            interview_type: "application",
+            children_in_home: true))
 
-            show = ParentNotInHomeController.show?(application)
-            expect(show).to eq(true)
-          end
-        end
-
-        context "when applying for atap" do
-          it "returns true" do
-            application = create(:interview,
-              selected_atap: true,
-              navigator: build(:navigator,
-                interview_type: "application",
-                children_in_home: true))
-
-            show = ParentNotInHomeController.show?(application)
-            expect(show).to eq(true)
-          end
-        end
-
-        context "when not applying for medicaid or atap" do
-          it "returns false" do
-            application = create(:interview,
-              selected_cama: false,
-              selected_atap: false,
-              navigator: build(:navigator,
-                interview_type: "application",
-                children_in_home: true))
-
-            show = ParentNotInHomeController.show?(application)
-            expect(show).to eq(false)
-          end
-        end
-
-        context "when no children in home" do
-          it "returns false" do
-            application = create(:interview,
-              selected_cama: true,
-              navigator: build(:navigator,
-                interview_type: "application",
-                children_in_home: false))
-
-            show = ParentNotInHomeController.show?(application)
-            expect(show).to eq(false)
-          end
-        end
+        show = ParentNotInHomeController.show?(application)
+        expect(show).to eq(true)
       end
     end
 
-    context "when renewing" do
+    context "when no children in home" do
       it "returns false" do
         application = create(:interview,
-          selected_atap: true,
-          navigator: build(:navigator, interview_type: "renewal"))
+          navigator: build(:navigator,
+            interview_type: "application",
+            children_in_home: false))
 
         show = ParentNotInHomeController.show?(application)
         expect(show).to eq(false)
