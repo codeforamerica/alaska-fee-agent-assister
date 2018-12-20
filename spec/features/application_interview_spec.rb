@@ -31,6 +31,7 @@ RSpec.feature "Interview for new application", :js do
     check "Food stamps"
     check "Medicaid"
     check "CAMA"
+    check "Alaska Temporary Assistance"
     click_on "Continue"
 
     expect(page).to have_content "Take a moment to go over their rights and responsibilities"
@@ -123,6 +124,9 @@ RSpec.feature "Interview for new application", :js do
     click_on "Yes"
 
     expect(page).to have_content "Are there any children who live in the home?"
+    click_on "Yes"
+
+    expect(page).to have_content "Is the application for someone who is currently pregnant?"
     click_on "Yes"
 
     expect(page).to have_content "Lastly, let's attach the application and any required documents."
