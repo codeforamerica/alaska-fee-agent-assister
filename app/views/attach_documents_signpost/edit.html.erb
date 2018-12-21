@@ -1,7 +1,7 @@
 <% content_for :card_title, "Lastly, let's attach the #{application_or_renewal} and any required documents." %>
 
 <% content_for :card_illustration do %>
-    <% render partial: "shared/progress_bar", locals: { current_section: 3, total_sections: 3 } %>
+  <% render partial: "components/molecules/progress_step_bar", locals: { current_step: 3, step_count: 3 } %>
 <% end %>
 
 <% content_for :card_body do %>
