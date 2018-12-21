@@ -1,5 +1,5 @@
 <% content_for :card_title, "Great! Now let's go through a few questions to see what other documents are needed." %>
 
 <% content_for :card_illustration do %>
-  <% render partial: "shared/progress_bar", locals: { current_section: 2, total_sections: 3 } %>
+  <% render partial: "components/molecules/progress_step_bar", locals: { current_step: 2, step_count: 3 } %>
 <% end %>
