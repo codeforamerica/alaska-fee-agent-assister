@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_20_234431) do
+ActiveRecord::Schema.define(version: 2018_12_21_180854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 2018_12_20_234431) do
     t.boolean "parent_not_in_home", default: false
     t.boolean "pregnant", default: false
     t.datetime "updated_at", null: false
+    t.boolean "want_direct_deposit", default: false
     t.index ["interview_id"], name: "index_navigators_on_interview_id"
   end
 
