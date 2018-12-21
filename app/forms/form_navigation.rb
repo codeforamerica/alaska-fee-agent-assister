@@ -33,6 +33,7 @@ class FormNavigation
     ParentNotInHomeController,
     PregnantController,
     ApprovedForDisabilityController,
+    InterimAssistanceController,
     AttachDocumentsSignpostController,
     HowToTakePhotosController,
   ].freeze

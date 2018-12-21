@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_20_231345) do
+ActiveRecord::Schema.define(version: 2018_12_20_234431) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2018_12_20_231345) do
     t.boolean "children_in_home", default: false
     t.boolean "citizen", default: false
     t.datetime "created_at", null: false
+    t.boolean "interim_assistance", default: false
     t.bigint "interview_id"
     t.integer "interview_type", default: 0
     t.integer "lived_outside_alaska", default: 0

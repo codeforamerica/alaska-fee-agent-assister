@@ -136,6 +136,9 @@ RSpec.feature "Interview for new application", :js do
     click_on "Yes"
 
     expect(page).to have_content "Has the applicant been approved for Social Security Disability or SSI?"
+    click_on "No"
+
+    expect(page).to have_content "Does the applicant want to apply for interim assistance?"
     click_on "Yes"
 
     expect(page).to have_content "Lastly, let's attach the application and any required documents."
