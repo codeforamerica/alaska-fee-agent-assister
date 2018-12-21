@@ -34,6 +34,7 @@ class FormNavigation
     PregnantController,
     ApprovedForDisabilityController,
     InterimAssistanceController,
+    WantDirectDepositController,
     AttachDocumentsSignpostController,
     HowToTakePhotosController,
   ].freeze

@@ -1,0 +1,10 @@
+<% content_for :card_title, "Does the #{applicant_or_client} want to get benefits through <strong>direct deposit</strong>?".html_safe %>
+
+<% content_for :card_help do %>
+  <p>
+    This is for Alaska Temporary Assistance and Adult Public Assistance benefits.
+  </p>
+  <p>
+    If yes, please have the <%= applicant_or_client %> fill out the <strong>Direct Deposit form.</strong>
+  </p>
+<% end %>
