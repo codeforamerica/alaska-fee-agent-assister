@@ -35,6 +35,7 @@ class FormNavigation
     ApprovedForDisabilityController,
     InterimAssistanceController,
     WantDirectDepositController,
+    VerificationGuidanceController,
     AttachDocumentsSignpostController,
     HowToTakePhotosController,
   ].freeze
