@@ -1,0 +1,70 @@
+<% content_for :card_title, "Based on the #{applicant_or_client}'s answers, here's what they'll need to include." %>
+
+<% content_for :card_body do %>
+  <div class="vertical-steps text--centered">
+    <div class="vertical-steps__step">
+      <% if @interview.application? %>
+        <div class="illustration illustration--app"></div>
+        <h4>Completed application</h4>
+      <% else %>
+        <div class="illustration illustration--renewal"></div>
+        <h4>Completed eligibility review form</h4>
+      <% end %>
+    </div>
+    <div class="vertical-steps__step">
+      <div class="illustration illustration--ak-id"></div>
+      <h4>A copy of the applicant's ID</h4>
+    </div>
+    <div class="vertical-steps__step">
+      <div class="illustration illustration--income"></div>
+      <h4>Proof of any income</h4>
+    </div>
+    <div class="vertical-steps__step">
+      <div class="illustration illustration--house"></div>
+      <h4>Proof of any living expenses</h4>
+    </div>
+    <% if @interview.needs_immigration? %>
+      <div class="vertical-steps__step">
+        <div class="illustration illustration--globe"></div>
+        <h4>Proof of immigration status</h4>
+      </div>
+    <% end %>
+    <% if @interview.needs_pregnancy? %>
+      <div class="vertical-steps__step">
+        <div class="illustration illustration--pregnant-woman"></div>
+        <h4>Proof of pregnancy</h4>
+      </div>
+    <% end %>
+    <% if @interview.needs_eviction_notice? %>
+      <div class="vertical-steps__step">
+        <div class="illustration illustration--memo"></div>
+        <h4>A copy of the eviction notice, landlord statement, or utility cut-off notice.</h4>
+      </div>
+    <% end %>
+    <% if @interview.needs_direct_deposit? %>
+      <div class="vertical-steps__step">
+        <div class="illustration illustration--direct-deposit"></div>
+        <h4>Completed direct deposit form</h4>
+      </div>
+    <% end %>
+    <% if @interview.needs_interim_assistance? %>
+      <div class="vertical-steps__step">
+        <div class="illustration illustration--ad2"></div>
+        <h4>Completed AD2 form</h4>
+        <p class="text--small">Preliminary Examination for Interim Assistance Form</p>
+      </div>
+      <div class="vertical-steps__step">
+        <div class="illustration illustration--gen142iar"></div>
+        <h4>Completed GEN142-IAR form</h4>
+        <p class="text--small">Authorization for Reimbursement of Interim Assistance</p>
+      </div>
+    <% end %>
+    <% if @interview.needs_apa_form? %>
+      <div class="vertical-steps__step">
+        <div class="illustration illustration--gen150"></div>
+        <h4>Completed GEN150 form</h4>
+        <p class="text--small">Authorization for Release of Protected Health Information</p>
+      </div>
+    <% end %>
+  </div>
+<% end %>

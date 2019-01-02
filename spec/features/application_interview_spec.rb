@@ -144,6 +144,12 @@ RSpec.feature "Interview for new application", :js do
     expect(page).to have_content "Does the applicant want to get benefits through direct deposit?"
     click_on "Yes"
 
+    expect(page).to have_content "Based on the applicant's answers, here's what they'll need to include."
+    expect(page).to have_content "Completed application"
+    expect(page).to have_content "A copy of the applicant's ID"
+    expect(page).to have_content "Proof of pregnancy"
+    click_on "Continue"
+
     expect(page).to have_content "Lastly, let's attach the application and any required documents."
     click_on "Continue"
 
