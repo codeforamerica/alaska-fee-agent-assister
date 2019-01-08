@@ -1,0 +1,10 @@
+<% content_for :card_illustration do %>
+  <div class="emoji emoji--big emoji--white-heavy-check-mark"></div>
+<% end %>
+<% content_for :card_title, "This #{application_or_renewal} has been successfully submitted to the DPA office." %>
+
+<% content_for :card_body do %>
+  <p>
+    <%= "Let the client know to expect a call within a few days or mail from the DPA office within the next two weeks to finalize the #{application_or_renewal} process." %>
+  </p>
+<% end %>

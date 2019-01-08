@@ -38,6 +38,7 @@ class FormNavigation
     VerificationGuidanceController,
     AttachDocumentsSignpostController,
     HowToTakePhotosController,
+    SuccessController,
   ].freeze
 
   class << self
