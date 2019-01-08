@@ -155,5 +155,7 @@ RSpec.feature "Interview for new application", :js do
 
     expect(page).to have_content "Take a moment to scan in any documents that are required."
     click_on "Continue"
+
+    expect(page).to have_content "This application has been successfully submitted to the DPA office."
   end
 end
