@@ -101,4 +101,4 @@ The styleguide can be viewed at [GetCalFresh Styleguide](http://localhost:3000/c
 [CircleCI](https://circleci.com/gh/codeforamerica/alaska-fee-agent-assister) is currently set up to deploy green builds to **staging**.
 
 ## PDF for Alaska Benefits
-A fillable PDF for Alaska's benefit programs - [GEN 50C - Fillable.pdf](https://github.com/codeforamerica/alaska-fee-agent-assister/blob/master/app/lib/pdfs/GEN 50C - Fillable.pdf)
+A fillable PDF for Alaska's benefit programs - [GEN 50C - Fillable.pdf](https://github.com/codeforamerica/alaska-fee-agent-assister/blob/master/app/lib/pdfs/GEN%2050C%20-%20Fillable.pdf)
