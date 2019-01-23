@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require cfa_styleguide_main
+//= require activestorage
+//= require handlebars.runtime
+//= require_tree ./templates
 //= require_tree .
 
 var showMore = (function() {

@@ -10,6 +10,7 @@ gem "administrate-field-enum"
 gem "attr_encrypted"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "cfa-styleguide", git: "https://github.com/codeforamerica/cfa-styleguide-gem"
+gem "handlebars_assets"
 gem "jbuilder", "~> 2.5"
 gem "lograge"
 gem "pdf-forms"
