@@ -107,6 +107,16 @@
   width: 48px;
 }
 
+.illustration--upload {
+  background-image: image-url('verification-upload-icon.png');
+  display: inline-block;
+  height: 12em;
+  width: 12em;
+  background-size: 100% auto;
+  position: relative;
+  background-repeat: no-repeat;
+}
+
 .emoji--white-heavy-check-mark {
   background-image: image-url('emojis/white-heavy-check-mark.svg');
 }

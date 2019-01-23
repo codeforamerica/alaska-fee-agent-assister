@@ -156,6 +156,11 @@ RSpec.feature "Interview for new application", :js do
     expect(page).to have_content "Take a moment to scan in any documents that are required."
     click_on "Continue"
 
+    expect(page).to have_content "Attach a copy of the applicant's ID."
+    page.attach_file("form[documents][]", Rails.root.join("spec", "fixtures", "image.jpg"), make_visible: true)
+    expect(page).to have_text "image.jpg"
+    click_on "Done with this step"
+
     expect(page).to have_content "This application has been successfully submitted to the DPA office."
   end
 end
