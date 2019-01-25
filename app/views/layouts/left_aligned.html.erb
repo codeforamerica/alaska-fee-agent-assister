@@ -19,11 +19,15 @@
         </div>
 
         <div class="form-card__footer">
-          <footer class="card__button_right">
-            <button class="button button--nav button--primary button--full-mobile" id="continue-button" type="submit">
-              <%= content_for(:card_footer_button_label) || "Continue" %>
-            </button>
-          </footer>
+          <% if content_for? :card_footer %>
+            <%= yield :card_footer %>
+          <% else %>
+            <footer class="card__button_right">
+              <button class="button button--nav button--primary button--full-mobile" id="continue-button" type="submit">
+                <%= content_for(:card_footer_button_label) || "Continue" %>
+              </button>
+            </footer>
+          <% end %>
         </div>
       </form>
     </main>

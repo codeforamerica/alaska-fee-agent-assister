@@ -24,6 +24,7 @@ var directUpload = (function () {
                     $('button[type="submit"]').prop('disabled', true);
                     $('.illustration--upload').hide();
                     $('#continue-button').text("Done with this step");
+                    $('#continue-button').addClass("button--primary");
 
                     for(let i=0,file;file=this.files[i];i++) {
                         var context = {

@@ -44,5 +44,11 @@
 <% if @form.documents.present? %>
   <% content_for(:card_footer_button_label, "Done with this step") %>
 <% else %>
-  <% content_for(:card_footer_button_label, "Nothing to submit now") %>
+  <% content_for :card_footer do %>
+    <footer class="card__button_right">
+      <button class="button button--nav button--full-mobile" id="continue-button" type="submit">
+        Nothing to submit now
+      </button>
+    </footer>
+  <% end %>
 <% end %>
